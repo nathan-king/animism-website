@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 
 export async function generateStaticParams() {
-  // Example static parameters — you can also generate these dynamically by walking your content folder.
   return [
     { slug: ["about"] },
     { slug: ["contact"] },
@@ -13,18 +12,21 @@ export async function generateStaticParams() {
   ];
 }
 
-export default async function Page({ params }: { params: { slug: string[] } }) {
-  // Await the params to satisfy the Next.js requirement.
-  const resolvedParams = await Promise.resolve(params);
-  // Now it's safe to use the properties on resolvedParams.
-  const slug = resolvedParams.slug.join("/");
-  
+interface PageProps {
+  params: {
+    slug: string[];
+  };
+}
+
+export default async function Page({ params }: PageProps) {
+  const slug = params.slug.join("/");
+
   const result = await getMarkdownContent(slug);
-  
+
   if (!result) {
     return notFound();
   }
-  
+
   const { content, data } = result;
 
   return (
