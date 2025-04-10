@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import Navbar from '../components/Navbar/index.astro';
+import '../styles/global.css';
+
+// Fetch all markdown pages
+const flatPages = await getCollection('pages');
+
+// ✅ Filter to include only:
+// - Top-level (e.g. "about")
+// - Second-level (e.g. "beliefs/ethics")
+// - Third-level only if it's an index page (e.g. "beliefs/spirits/index")
+const filteredPages = flatPages.filter((page) => {
+  const segments = page.slug.split('/');
+  return (
+    segments.length <= 2 || // keep top and second level
+    (segments.length === 3 && segments[2] === 'index') // allow third level only if it's index.md
+  );
+});
+
+// ✅ Nest them for dropdown menus
+function nestPages(pages) {
+  const tree = {};
+
+  for (const page of pages) {
+    const parts = page.slug.split('/');
+    const top = parts[0];
+    const rest = parts.slice(1);
+
+    if (!tree[top]) {
+      tree[top] = {
+        title: page.data.title,
+        slug: top,
+        children: [],
+      };
+    }
+
+    // second-level pages (or third-level index.md)
+    if (rest.length === 1 && rest[0] !== 'index') {
+      tree[top].children.push({
+        title: page.data.title,
+        slug: `${top}/${rest[0]}`,
+      });
+    } else if (rest.length === 2 && rest[1] === 'index') {
+      tree[top].children.push({
+        title: page.data.title,
+        slug: `${top}/${rest[0]}`,
+      });
+    } else if (rest.length === 0) {
+      // override top-level title
+      tree[top].title = page.data.title;
+    }
+  }
+
+  return Object.values(tree);
+}
+
+const pages = nestPages(filteredPages);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Site</title>
+  </head>
+  <body>
+    <Navbar pages={pages} />
+    <main class="pageContent">
+      <slot />
+    </main>
+  </body>
+</html>

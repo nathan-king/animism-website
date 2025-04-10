@@ -1,0 +1,63 @@
+---
+import styles from './Navbar.module.css';
+const { pages } = Astro.props;
+---
+
+<header class={styles.header}>
+  <nav class={styles.nav}>
+    <div class={styles.brand}>
+      <a class={styles.navItem} href="/">MySite</a>
+    </div>
+
+    <ul class={styles.navList}>
+      {pages.map((page) => (
+        <li class={`${styles.navItemWrapper} navItemWrapper`} data-slug={page.slug}>
+          <a href={`/${page.slug}`} class={`${styles.navItem} ${page.children?.length ? styles.hasChildren : ''}`}>
+            {page.title}
+          </a>
+
+          {page.children?.length > 0 && (
+            <ul class={`${styles.dropdown} dropdown`} data-parent={page.slug}>
+              {page.children.map((child) => (
+                <li><a href={`/${child.slug}`} class={styles.navItem}>{child.title}</a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <script type="module">
+    const wrappers = document.querySelectorAll('.navItemWrapper');
+    const hideTimers = {};
+
+    wrappers.forEach((wrapper) => {
+      const slug = wrapper.dataset.slug;
+      const dropdown = document.querySelector(`.dropdown[data-parent="${slug}"]`);
+
+      if (!dropdown) return;
+
+      wrapper.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimers[slug]);
+        dropdown.style.display = 'block';
+      });
+
+      wrapper.addEventListener('mouseleave', () => {
+        hideTimers[slug] = setTimeout(() => {
+          dropdown.style.display = 'none';
+        }, 200); // ⏳ 200ms delay
+      });
+
+      dropdown.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimers[slug]);
+      });
+
+      dropdown.addEventListener('mouseleave', () => {
+        hideTimers[slug] = setTimeout(() => {
+          dropdown.style.display = 'none';
+        }, 200);
+      });
+    });
+  </script>
+</header>
