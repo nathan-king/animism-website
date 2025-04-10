@@ -9,7 +9,7 @@ export default async function HomePage() {
 
   try {
     const homeContent = await fs.readFile(homeFilePath, "utf-8");
-    const { content, data } = matter(homeContent);
+    const { content } = matter(homeContent);
 
     const files = await fs.readdir(path.join(process.cwd(), "content"));
 
