@@ -5,19 +5,18 @@ import ReactMarkdown from "react-markdown";
 
 export async function generateStaticParams() {
   return [
-    { params: { slug: ["about"] } },
-    { params: { slug: ["contact"] } },
-    { params: { slug: ["beliefs"] } },
-    { params: { slug: ["beliefs", "spirits"] } },
+    { slug: ["about"] },
+    { slug: ["contact"] },
+    { slug: ["beliefs"] },
+    { slug: ["beliefs", "spirits"] },
   ];
 }
 
-
-interface PageProps {
+type PageProps = {
   params: {
     slug: string[];
   };
-}
+};
 
 export default async function Page({ params }: PageProps) {
   const slug = params.slug.join("/");
