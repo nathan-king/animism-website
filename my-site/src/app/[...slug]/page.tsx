@@ -5,12 +5,13 @@ import ReactMarkdown from "react-markdown";
 
 export async function generateStaticParams() {
   return [
-    { slug: ["about"] },
-    { slug: ["contact"] },
-    { slug: ["beliefs"] },
-    { slug: ["beliefs", "spirits"] },
+    { params: { slug: ["about"] } },
+    { params: { slug: ["contact"] } },
+    { params: { slug: ["beliefs"] } },
+    { params: { slug: ["beliefs", "spirits"] } },
   ];
 }
+
 
 interface PageProps {
   params: {
