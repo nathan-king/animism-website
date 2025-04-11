@@ -23,43 +23,57 @@ A nexus is not a vague energy or symbolic idea. It is a **physical form** that h
 
 ### Sanctified Nexus *(Strongest)*
 
-Sanctified nexuses involve physically linking a spiritual presence with intentionally built shrines or structures. These are the strongest focal points.
+Sanctified nexuses involve physically linking a spiritual presence with an intentionally built shrine and marking it with a **seal**. Seals are essential in focusing the spirit's presence and embodying the relationship.
 
 #### Natural Sanctified Nexus  
-A naturally sacred location deliberately amplified by physically enshrining it through shrines, carvings, or altars.  
+A naturally sacred location deliberately amplified by physically enshrining it through shrines, carvings, and seals.  
 **Examples**: Shrine built around a sacred mountain or ancient tree.
 
 #### Great Spirit Sanctified Nexus  
-Specifically established shrines dedicated to Great Spirits, requiring precise materials, symbolic alignment, and carefully chosen locations directly linked to the spirit’s domain.  
+Specifically established shrines dedicated to Great Spirits, requiring precise materials, seals, symbolic alignment, and carefully chosen locations linked to the spirit’s domain.  
 **Examples**:
 - **Ouranos**: Elevated mountain or high plateau  
 - **Gaia**: Forest or woodland  
 - **Oceanus**: Ocean coastline
+
+> Without the proper seal, a site cannot be considered a Sanctified Nexus—even if it meets other requirements.
+
+---
 
 ### Natural Nexus *(Very Strong)*
 
 Naturally occurring sacred locations or objects that are inherently spiritually powerful without human intervention.  
 **Examples**: Sacred river, untouched grove, spiritually resonant cave
 
+> Natural nexuses do not require seals to exist, but seals may be added to formally recognize or amplify them.
+
+---
+
 ### Dedicated Nexus *(Strong)*
 
-Intentionally established shrines created by marking a place or object with a seal and constructed from symbolically aligned materials. Does not require spatial proximity to a natural nexus but must have appropriate symbolic linkage.  
+Intentionally created shrines constructed from symbolically aligned materials and **always marked with a seal** that represents the spirit. These nexuses are spiritually active only when enshrined and sealed.  
 **Examples**:
 - Community shrine for collective reverence  
 - Small shrine dedicated at individual trees  
 - Home shrine constructed from symbolic materials
 
+> A seal is what transforms a symbolic structure into an actual nexus. Without it, it is not spiritually active.
+
+---
+
 ### Personal Nexus *(Weakest)*
 
-Portable items bearing a spirit’s seal, offering subtle personal connections.
+Portable items bearing a spirit’s **seal**, allowing subtle personal connection.
 
 #### Talismanic Nexus *(Moderate Strength)*  
 Created exclusively by consecrating a portable object at a Sanctified Nexus.  
 **Example**: Pendant consecrated at a shrine dedicated to Ouranos
 
 #### Simple Nexus *(Weakest)*  
-Independently created portable objects without direct connection to a stronger nexus.  
-**Example**: Privately embroidered cloth seal created at home
+A portable object marked with a seal outside of any stronger nexus context.  
+**Example**: Cloth seal embroidered privately at home
+
+> While the seal alone can create a weak nexus, its strength depends on context. Talismans gain more presence when consecrated at stronger nexuses.
 
 ---
 
@@ -67,7 +81,8 @@ Independently created portable objects without direct connection to a stronger n
 
 - A **nexus** is the **embodied form** of spirit—a natural or crafted presence.
 - A **shrine** is the **human structure** built to house, honor, and engage with a nexus.
-- Natural nexuses exist without shrines, but **created nexuses require enshrinement** to become spiritually active.
+- **Seals** are essential for any created or enshrined nexus. They are the symbolic anchors that focus the spirit’s presence.
+- Natural nexuses exist without shrines, but **created nexuses require both a shrine and a seal** to become spiritually active.
 
 ---
 
@@ -76,7 +91,8 @@ Independently created portable objects without direct connection to a stronger n
 We do not say that “the nexus chooses you.” Instead, we recognize that the world is full of spirit—and our work is to **perceive**, **interpret**, and **honor** that presence with discernment. A nexus is identified through:
 - **Material continuity** with a known presence  
 - **Spiritual relevance**, such as resonance with story, memory, or place  
-- **Ethical relationship**—one of mutual respect, not ownership
+- **Ethical relationship**—one of mutual respect, not ownership  
+- **Presence of a seal**, when appropriate for enshrined or created nexuses
 
 ---
 
@@ -85,7 +101,10 @@ We do not say that “the nexus chooses you.” Instead, we recognize that the w
 While many nexuses exist naturally, it is also possible to create a nexus through sacred process. This includes:
 - Selecting an object connected materially or symbolically to the spirit  
 - Seeking consent and acknowledgment  
-- Enshrining the object with care and ritual attention
+- **Marking the object with the appropriate seal**  
+- Enshrining it with care and ritual attention
+
+> A seal is not optional. It is what calls the spirit and affirms the relationship.
 
 This process will be detailed on a separate page: **[Creating a Nexus](/creating-a-nexus)** *(coming soon)*.
 
