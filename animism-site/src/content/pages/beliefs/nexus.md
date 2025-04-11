@@ -21,39 +21,45 @@ A nexus is not a vague energy or symbolic idea. It is a **physical form** that h
 
 ## Types of Nexus
 
-### Natural Nexus  
-These are forms in nature where the presence of a spirit is strong and self-evident.  
-Examples include:
-- A mountain as the body of a mountain spirit  
-- A spring as the breath of a local water spirit  
-- A tree as a dwelling of an earth spirit or ancestor
+### Sanctified Nexus *(Strongest)*
 
-These do not require human intervention to be nexuses—but they may be honored, tended, or enshrined in appropriate ways.
+Sanctified nexuses involve physically linking a spiritual presence with intentionally built shrines or structures. These are the strongest focal points.
 
-### Created Nexus  
-Some nexuses are crafted or chosen—objects that come into relationship with a spirit through ritual and intention.  
-Examples include:
-- A carved figure made from a tree associated with a known spirit  
-- A stone taken from a sacred mountain and enshrined in a home shrine  
-- A vessel offered to a creative or ancestral presence and accepted
+#### Natural Sanctified Nexus  
+A naturally sacred location deliberately amplified by physically enshrining it through shrines, carvings, or altars.  
+**Examples**: Shrine built around a sacred mountain or ancient tree.
 
-These nexuses must be connected in **substance or symbolism** to the spirit being enshrined. Not all materials are appropriate. The object must carry an **aspect of the spirit**, whether through origin, form, or resonance.
+#### Great Spirit Sanctified Nexus  
+Specifically established shrines dedicated to Great Spirits, requiring precise materials, symbolic alignment, and carefully chosen locations directly linked to the spirit’s domain.  
+**Examples**:
+- **Ouranos**: Elevated mountain or high plateau  
+- **Gaia**: Forest or woodland  
+- **Oceanus**: Ocean coastline
 
----
+### Natural Nexus *(Very Strong)*
 
-## Primary and Secondary Nexus
+Naturally occurring sacred locations or objects that are inherently spiritually powerful without human intervention.  
+**Examples**: Sacred river, untouched grove, spiritually resonant cave
 
-A **primary nexus** is the original or central embodiment of a spirit—for example, a mountain that is home to a local spirit.
+### Dedicated Nexus *(Strong)*
 
-A **secondary nexus** is an object or place **derivatively connected** to the primary one—for example:
-- A rock from the mountain
-- A carved icon made from a branch of its forest
-- A shrine constructed near its base
+Intentionally established shrines created by marking a place or object with a seal and constructed from symbolically aligned materials. Does not require spatial proximity to a natural nexus but must have appropriate symbolic linkage.  
+**Examples**:
+- Community shrine for collective reverence  
+- Small shrine dedicated at individual trees  
+- Home shrine constructed from symbolic materials
 
-A secondary nexus may be created through respectful ritual, but it must maintain **integrity of connection**. No object becomes a nexus through will alone. It must be:
-1. **Materially or symbolically tied** to the spirit  
-2. **Recognized and enshrined** appropriately  
-3. **Accepted through ritual and relationship**
+### Personal Nexus *(Weakest)*
+
+Portable items bearing a spirit’s seal, offering subtle personal connections.
+
+#### Talismanic Nexus *(Moderate Strength)*  
+Created exclusively by consecrating a portable object at a Sanctified Nexus.  
+**Example**: Pendant consecrated at a shrine dedicated to Ouranos
+
+#### Simple Nexus *(Weakest)*  
+Independently created portable objects without direct connection to a stronger nexus.  
+**Example**: Privately embroidered cloth seal created at home
 
 ---
 
@@ -77,7 +83,7 @@ We do not say that “the nexus chooses you.” Instead, we recognize that the w
 ## Creating a Nexus
 
 While many nexuses exist naturally, it is also possible to create a nexus through sacred process. This includes:
-- Selecting an object connected to the spirit  
+- Selecting an object connected materially or symbolically to the spirit  
 - Seeking consent and acknowledgment  
 - Enshrining the object with care and ritual attention
 
@@ -94,7 +100,7 @@ Some nexuses should not be enshrined or removed. The mountain does not need to b
 ## A Living Cosmology
 
 The world is full of potential nexuses. Spirit is not rare—it is everywhere.  
-But recognition, relationship, and care are what transform potential into presence.
+But recognition, relationship, and care transform potential into presence.
 
 To walk this path is to move through a world where stone, water, tree, and tool may all become sacred—when the relationship is right.
 
