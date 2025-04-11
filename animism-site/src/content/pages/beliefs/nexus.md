@@ -2,8 +2,6 @@
 title: Nexus
 ---
 
-# Nexus
-
 A **nexus** is a physical place or object through which a spirit is embodied and made present. In our tradition, we understand that **all things participate in spirit**, but some locations or materials become **recognizable centers of presence**—active, relational points where spirit and form converge with particular clarity.
 
 A mountain, a grove, or a spring may be a nexus. A carved figure made from the wood of that grove may also become a nexus when rightly enshrined. These are not metaphors—they are material-spiritual relationships.
