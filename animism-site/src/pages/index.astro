@@ -1,9 +1,87 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
----
+import { getCollection } from 'astro:content';
+
+// nestPages() builds a nested structure from a flat array of page objects.
+// It supports arbitrary levels: each page's slug is split by "/".
+// If a page's slug ends with "index", that segment is omitted.
+function nestPages(pages) {
+  const tree = {};
+
+  pages.forEach(page => {
+    // Split the slug and filter out any "index" segment.
+    const segments = page.slug.split('/').filter(seg => seg !== 'index');
+    let current = tree;
+    segments.forEach((segment, index) => {
+      // Build the cumulative slug for this node
+      const currentSlug = segments.slice(0, index + 1).join('/');
+      // If the node doesn't exist yet, create it.
+      if (!current[segment]) {
+        current[segment] = {
+          slug: currentSlug,
+          title: page.data.title, // default title from the first page encountered
+          children: {}
+        };
+      } else {
+        // If we’re on the last segment, update the node's title.
+        if (index === segments.length - 1) {
+          current[segment].title = page.data.title;
+        }
+      }
+      // Move one level deeper
+      current = current[segment].children;
+    });
+  });
+
+  // Convert the tree object into an array for easier mapping.
+  function convert(obj) {
+    return Object.values(obj).map(item => ({
+      title: item.title,
+      slug: item.slug,
+      children: convert(item.children)
+    }));
+  }
+
+  return convert(tree);
+}
+
+// Fetch all pages from the collection.
+const flatPages = await getCollection('pages');
+// Build the nested structure.
+const nestedPages = nestPages(flatPages);
+
+console.log("Nested pages structure:", nestedPages);
+--- 
 
 <Layout>
   <h1>Welcome to My Site</h1>
-  <p>This is the homepage.</p>
+  <p>
+    Welcome! This website is dedicated to exploring our collection of content.
+    Below is a sitemap that shows the structure of the site. Click a title to visit that page.
+  </p>
+
+  <h2>Site Map</h2>
+  
+  <!-- Recursive function to render the nested list -->
+  {/*
+    Note: We define the recursive function in the frontmatter and then call it inline.
+    Astro supports calling JS functions in the template part.
+  */}
+  {(() => {
+    function renderList(pages) {
+      return (
+        <ul>
+          {pages.map(page => (
+            <li>
+              <a href={`/${page.slug}`}>{page.title}</a>
+              {page.children && page.children.length > 0 && renderList(page.children)}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return renderList(nestedPages);
+  })()}
+  
 </Layout>
