@@ -77,7 +77,7 @@ A portable object marked with a seal outside of any stronger nexus context.
 
 ## Nexus vs. Shrine
 
-- A **nexus** is the **embodied form** of spirit—a natural or crafted presence.
+- A **nexus** is an **embodied form** of spirit—a natural or crafted presence.
 - A **shrine** is the **human structure** built to house, honor, and engage with a nexus.
 - **Seals** are essential for any created or enshrined nexus. They are the symbolic anchors that focus the spirit’s presence.
 - Natural nexuses exist without shrines, but **created nexuses require both a shrine and a seal** to become spiritually active.
