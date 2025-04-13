@@ -15,7 +15,6 @@ collections:
     extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      # Removed the slug field entirely so CMS auto-generates one
       - { label: "Category", name: "category", widget: "select", options: ["spirits", "seals", "rituals", "concepts"] }
       - { label: "Tags", name: "tags", widget: "list", required: false, default: [] }
       - { label: "Summary", name: "summary", widget: "text" }
