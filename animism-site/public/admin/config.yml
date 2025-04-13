@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: auth0
+  login: https://animism-wiki.netlify.app/.netlify/functions/auth
   branch: main
 
 media_folder: "public/images/uploads"
