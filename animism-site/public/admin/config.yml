@@ -1,16 +1,7 @@
-backend:
-  name: proxy
-  proxy_url: https://animism-wiki.netlify.app/.netlify/functions/auth
-  login: https://animism-wiki.netlify.app/.netlify/functions/auth
-  branch: main
-
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
-
 collections:
   - name: "spirits"
     label: "Great Spirits"
-    folder: "content/spirits"
+    folder: "content/beliefs/spirits"
     create: true
     slug: "{{slug}}"
     fields:
@@ -23,7 +14,7 @@ collections:
     files:
       - label: "Beliefs Page"
         name: "beliefs"
-        file: "content/beliefs.md"
+        file: "content/beliefs/index.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
