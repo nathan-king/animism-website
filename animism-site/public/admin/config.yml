@@ -16,7 +16,8 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["spirits", "seals", "rituals", "concepts"] }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false, default: [] }
       - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Related", name: "related", widget: "list", required: false }
+      - { label: "Related", name: "related", widget: "list", required: false, default: [] }
       - { label: "Body", name: "body", widget: "markdown" }
+

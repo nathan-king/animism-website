@@ -1,6 +1,5 @@
 ---
 title: "Nyx"
-slug: "nyx"
 category: "spirits"
 tags:
   - primordial
