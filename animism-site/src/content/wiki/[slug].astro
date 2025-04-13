@@ -1,0 +1,26 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('wiki');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const page = await getEntryBySlug('wiki', slug);
+
+if (!page) {
+  throw new Error(`Wiki page not found: ${slug}`);
+}
+
+const html = page.rendered?.html;
+---
+
+<Layout>
+  <h1>{page.data.title}</h1>
+  <p>{page.data.summary}</p>
+  <article set:html={html}></article>
+</Layout>
