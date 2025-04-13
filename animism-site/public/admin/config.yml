@@ -1,32 +1,23 @@
 backend:
   name: proxy
-  proxy_url: https://animism-wiki.netlify.app/.netlify/functions/auth
-  login: https://animism-wiki.netlify.app/.netlify/functions/auth
+  proxy_url: https://your-site.netlify.app/.netlify/functions/auth
+  login: https://your-site.netlify.app/.netlify/functions/auth
   branch: main
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
-media_library:
-  name: uploadcare
-
 collections:
-  - name: "spirits"
-    label: "Great Spirits"
-    folder: "content/beliefs/spirits"
+  - name: "wiki"
+    label: "Wiki Entries"
+    folder: "src/content/wiki"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Seal", name: "seal", widget: "image" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["spirits", "seals", "rituals", "concepts"] }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Related", name: "related", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "beliefs"
-    label: "Beliefs"
-    files:
-      - label: "Beliefs Page"
-        name: "beliefs"
-        file: "content/beliefs/index.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
