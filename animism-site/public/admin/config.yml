@@ -13,6 +13,7 @@ collections:
     folder: "src/content/wiki"
     create: true
     extension: "md"
+    format: "frontmatter"   # <-- ADD THIS LINE
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["spirits", "seals", "rituals", "concepts"] }
