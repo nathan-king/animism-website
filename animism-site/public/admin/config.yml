@@ -13,11 +13,11 @@ collections:
     folder: "src/content/wiki"
     create: true
     slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["spirits", "seals", "rituals", "concepts"] }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Related", name: "related", widget: "list" }
-      - { label: "Body", name: "body", widget: "markdown" }
+# inside collections:
+fields:
+  - { label: "Title", name: "title", widget: "string" }
+  - { label: "Category", name: "category", widget: "select", options: [...] }
+  - { label: "Tags", name: "tags", widget: "list", required: false }
+  - { label: "Summary", name: "summary", widget: "text" }
+  - { label: "Related", name: "related", widget: "list", required: false }
+  - { label: "Body", name: "body", widget: "markdown" }
