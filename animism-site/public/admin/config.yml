@@ -1,7 +1,7 @@
 backend:
   name: proxy
-  proxy_url: https://animism-site.netlify.app/.netlify/functions/auth
-  login: https://animism-site.netlify.app/.netlify/functions/auth
+  login: /.netlify/functions/auth
+  proxy_url: /.netlify/functions/auth
   branch: main
 
 media_folder: "public/images/uploads"
