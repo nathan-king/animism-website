@@ -12,12 +12,12 @@ collections:
     label: "Wiki Entries"
     folder: "src/content/wiki"
     create: true
-    slug: "{{slug}}"
+    extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      # Removed the slug field entirely so CMS auto-generates one
       - { label: "Category", name: "category", widget: "select", options: ["spirits", "seals", "rituals", "concepts"] }
       - { label: "Tags", name: "tags", widget: "list", required: false, default: [] }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Related", name: "related", widget: "list", required: false, default: [] }
       - { label: "Body", name: "body", widget: "markdown" }
-
