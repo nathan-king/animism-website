@@ -1,5 +1,5 @@
 backend:
-  name: auth0
+  name: proxy
   login: https://animism-wiki.netlify.app/.netlify/functions/auth
   branch: main
 
