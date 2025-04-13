@@ -40,7 +40,7 @@ Though grouped by type for clarity, many of these spirits overlap in influence a
 - **Tethys** – **Fresh waters**; rivers, springs, and sustenance.
 - **Rhea** – **Fertility and growth**; renewal, birth, and natural cycles.
 - **Anemos** – **Wind**; movement, weather, and breath.
-- **Pyr** *(optional)* – **Fire**; heat, change, and creative destruction.
+- **Pyr** – **Fire**; heat, change, and creative destruction.
 
 ---
 

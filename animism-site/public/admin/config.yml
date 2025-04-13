@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "spirits"
+    label: "Great Spirits"
+    folder: "content/spirits"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Seal", name: "seal", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "beliefs"
+    label: "Beliefs"
+    files:
+      - label: "Beliefs Page"
+        name: "beliefs"
+        file: "content/beliefs.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
