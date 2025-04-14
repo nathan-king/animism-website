@@ -1,5 +1,7 @@
 ---
 title: Nexus
+category: Shrines
+summary: About nexuses
 ---
 
 A **nexus** is a physical place or object through which a spirit is embodied and made present. In our tradition, we understand that **all things participate in spirit**, but some locations or materials become **recognizable centers of presence**—active, relational points where spirit and form converge with particular clarity.

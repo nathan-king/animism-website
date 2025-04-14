@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import PageLayout from '../layouts/PageLayout/index.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -17,7 +17,7 @@ const html = page.rendered?.html;
 console.log("DEBUG: Rendered HTML:", html);
 ---
 
-<Layout>
+<PageLayout>
   <h1>{page.data.title}</h1>
   <article set:html={html}></article>
-</Layout>
+</PageLayout>

@@ -1,0 +1,40 @@
+.wikiLayout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 0; /* remove any spacing pushdown */
+  }
+  
+  .wikiSidebarContainer {
+    width: 260px;
+    flex-shrink: 0;
+  }
+  
+  .wikiArticle {
+    flex: 1;
+    min-width: 0;
+    padding: 0; /* remove default padding */
+    margin: 0;
+  }
+  
+  /* Remove top margin from first heading inside .wikiArticle */
+  .wikiArticle h1:first-child {
+    margin-top: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .wikiLayout {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .wikiSidebarContainer,
+    .wikiArticle {
+      width: 100%;
+    }
+  }
+  

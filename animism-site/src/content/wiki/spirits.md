@@ -1,5 +1,7 @@
 ---
 title: Spirits
+category: Spirits
+summary: About spirits
 ---
 
 In this tradition, the world is alive with spirits. Every part of reality—cosmic, natural, ancestral, and creative—is animated by presence. These spirits are not separate deities in the sense of distant gods, but manifestations of relation, energy, and meaning. They may be vast or intimate, visible or hidden, collective or personal.
@@ -14,7 +16,7 @@ Across cultures, the same spirit may be known by many names, or many spirits may
 
 We speak of different kinds of spirits not to divide them, but to understand the many ways they show up in the world. These types blend and flow into each other, but offer a helpful structure for practice and reflection:
 
-- [**The Great Spirits**](spirits/great-spirits) — Archetypal forces that shape the cosmos, the elements, and the inner life. These include spirits of earth, sky, time, memory, justice, and transformation.
+- [**The Great Spirits**](./great-spirits) — Archetypal forces that shape the cosmos, the elements, and the inner life. These include spirits of earth, sky, time, memory, justice, and transformation.
   
 - **Local Spirits** *(coming soon)* — Guardians of place, land, and natural features. These are the spirits of forests, rivers, stones, and cities—those who dwell alongside us.
 

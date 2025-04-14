@@ -1,5 +1,7 @@
 ---
 title: Seals
+category: Shrines
+summary: About Seals
 ---
 
 A **seal** is a human-made symbol that facilitates a **spiritual connection** between a nexus and a spirit. Seals are crafted with intent and creativity, serving as a focal point to allow a nexus to resonate with the spirit's presence. They are essential in **channeling** and **activating** the spiritual energy of a nexus, making the spirit present and active within the material world.

@@ -1,0 +1,20 @@
+---
+import WikiSidebar from '../../components/WikiSidebar.js';
+import PageLayout from '../PageLayout/index.astro';
+import { getCollection } from 'astro:content';
+import styles from './WikiLayout.module.css';
+
+const wikiEntries = await getCollection('wiki');
+---
+
+<PageLayout>
+  <div class={styles.wikiLayout}>
+    <div class={styles.wikiSidebarContainer}>
+      <WikiSidebar entries={wikiEntries} client:only="react" />
+    </div>
+
+    <div class={styles.wikiArticle}>
+      <slot />
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,42 @@
+---
+import WikiLayout from '../../layouts/WikiLayout/index.astro';
+import { getCollection } from 'astro:content';
+
+// Load all wiki entries
+const wikiEntries = await getCollection('wiki');
+
+// Group by category
+const grouped = {};
+
+for (const entry of wikiEntries) {
+  const category = entry.data.category || 'Uncategorised';
+  if (!grouped[category]) grouped[category] = [];
+  grouped[category].push(entry);
+}
+
+// Sort entries within each category
+for (const cat in grouped) {
+  grouped[cat].sort((a, b) => a.data.title.localeCompare(b.data.title));
+}
+
+// Sort categories alphabetically
+const sortedCategories = Object.keys(grouped).sort();
+---
+
+<WikiLayout posts={wikiEntries}>
+  <h1>Wiki</h1>
+  <p>Browse topics by category:</p>
+
+  {sortedCategories.map(category => (
+    <section>
+      <h2>{category}</h2>
+      <ul>
+        {grouped[category].map(entry => (
+          <li>
+            <a href={`/wiki/${entry.slug}`}>{entry.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</WikiLayout>

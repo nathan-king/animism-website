@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import Navbar from '../components/Navbar/index.astro';
-import '../styles/global.css';
+import Navbar from '../../components/Navbar/index.astro';
+import '../../styles/global.css';
 
 // Fetch all markdown pages
 const flatPages = await getCollection('pages');

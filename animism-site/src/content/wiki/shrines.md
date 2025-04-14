@@ -1,5 +1,7 @@
 ---
 title: Shrines
+category: Shrines
+summary: About shrines
 ---
 
 A **shrine** is a dedicated space created to house and honor a spirit through its physical embodiment—known as a **nexus**. While a nexus is the form through which spirit is expressed, a shrine is the **intentional space** that defines and maintains the relationship.

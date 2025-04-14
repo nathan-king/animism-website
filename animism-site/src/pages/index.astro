@@ -1,6 +1,6 @@
 ---
 // src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
+import PageLayout from '../layouts/PageLayout/index.astro';
 import { getCollection } from 'astro:content';
 
 // nestPages() builds a nested structure from a flat array of page objects.
@@ -54,7 +54,7 @@ const nestedPages = nestPages(flatPages);
 console.log("Nested pages structure:", nestedPages);
 --- 
 
-<Layout>
+<PageLayout>
   <h1>Welcome to My Site</h1>
   <p>
     Welcome! This website is dedicated to exploring our collection of content.
@@ -84,4 +84,4 @@ console.log("Nested pages structure:", nestedPages);
     return renderList(nestedPages);
   })()}
   
-</Layout>
+</PageLayout>

@@ -9,7 +9,7 @@ Our animistic tradition is built on the understanding that the universe is alive
 Every spirit, whether vast or intimate, represents a way in which reality expresses itself. We honor these living presences through mindful practice and reciprocal relationships. The same force may appear with different names and forms in various cultures; indeed, many spirits are a blend of what other traditions see as distinct deities.
 
 - **Great Spirits:**  
-  The archetypal forces that shape the cosmos are central to our cosmology. They are expressed in names drawn from ancient Western roots—especially Greek—and are detailed on our [Great Spirits](/the-great-spirits) page.
+  The archetypal forces that shape the cosmos are central to our cosmology. They are expressed in names drawn from ancient Western roots—especially Greek—and are detailed on our [Great Spirits](/great-spirits) page.
 
 - **Local and Ancestral Spirits:**  
   Every place is touched by its own unique guardians, and our ancestors remain part of the living tapestry of life. Learn more about these intimate presences on our dedicated pages as well.

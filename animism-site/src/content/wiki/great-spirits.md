@@ -1,5 +1,7 @@
 ---
 title: Great Spirits
+category: Spirits
+summary: About the Great Spirits
 ---
 
 The Great Spirits are symbolic representations of natural and existential forces that shape our world. Drawing from ancient Greek cosmology, these figures help us understand the structure of reality by giving form to concepts like time, space, light, and memory. They are not deities in a literal sense, but archetypal models that offer insight into the world and our place in it.
