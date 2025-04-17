@@ -1,133 +1,161 @@
-/* 🎨 Theme variables */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-  --font-sans: 'Arial', 'Helvetica', sans-serif;
-  --font-mono: 'Courier New', monospace;
-
-  --foreground-strong: #111111;
-
-  --code-bg: #f3f3f3;
-  --code-fg: #d63384;
-
-  --link: #0070f3;
-  --link-hover: #0053c7;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c1c1e;         /* Soft dark grey */
-    --foreground: #d1d1d1;         /* Softer light text */
-    --foreground-strong: #f0f0f0;  /* Brighter headings */
-
-    --code-bg: #2a2a2e;            /* Darkened code block bg */
-    --code-fg: #ff85c1;            /* Soft pink for inline code */
-
-    --link: #64b5f6;               /* Sky blue */
-    --link-hover: #90caf9;         /* Light hover */
+/* ──────────────────────────────────────────
+   🎨 Theme variables
+   ────────────────────────────────────────── */
+   :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  
+    --font-sans: 'Arial', 'Helvetica', sans-serif;
+    --font-mono: 'Courier New', monospace;
+  
+    --foreground-strong: #111111;
+  
+    --code-bg: #f3f3f3;
+    --code-fg: #d63384;
+  
+    --link: #0070f3;
+    --link-hover: #0053c7;
+  
+    --nav-border-color: rgba(0, 0, 0, 0.1);
+    --nav-shadow-color: rgba(0, 0, 0, 0.05);
   }
-}
-
-:root {
-  --nav-border-color: rgba(0, 0, 0, 0.1);
-  --nav-shadow-color: rgba(0, 0, 0, 0.05);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --nav-border-color: rgba(255, 255, 255, 0.1);
-    --nav-shadow-color: rgba(0, 0, 0, 0.25);
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #1c1c1e;            /* Soft dark grey */
+      --foreground: #d1d1d1;            /* Softer light text */
+      --foreground-strong: #f0f0f0;     /* Brighter headings */
+  
+      --code-bg: #2a2a2e;               /* Darkened code block bg */
+      --code-fg: #ff85c1;               /* Soft pink for inline code */
+  
+      --link: #64b5f6;                  /* Sky blue */
+      --link-hover: #90caf9;            /* Light hover */
+  
+      --nav-border-color: rgba(255, 255, 255, 0.1);
+      --nav-shadow-color: rgba(0, 0, 0, 0.25);
+    }
   }
-}
-
-
-/* 🌐 Global body & typography styles */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0;
-}
-
-/* 🖱️ Link behavior */
-a {
-  color: var(--link);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--link-hover);
-}
-
-/* ✍️ Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--foreground-strong);
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-h1 {
-  font-size: 200%;
-}
-
-h2 {
-  font-size: 175%;
-}
-
-h3 {
-  font-size: 125%;
-}
-
-h4 {
-  font-size: 110%;
-}
-
-
-/* 📝 Lists */
-ul, ol {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* 💻 Inline code */
-code {
-  font-family: var(--font-mono);
-  background-color: var(--code-bg);
-  color: var(--code-fg);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-}
-
-/* 📄 General typography tweaks */
-p {
-  margin: 1rem 0;
-}
-
-strong {
-  color: var(--foreground-strong);
-  font-weight: 600;
-}
-
-.pageContent {
-  padding-top: 1em;
-  padding-bottom: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 75%;
-  margin: 0 auto;
-}
+  
+  /* ──────────────────────────────────────────
+     🌐 Global body & typography
+     ────────────────────────────────────────── */
+  * { box-sizing: border-box; }
+  
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* 🖱️ Links */
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+  a:hover { color: var(--link-hover); }
+  
+  /* ✍️ Headings */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1.5em 0 0.5em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--foreground-strong);
+  }
+  h1 { font-size: 200%; }
+  h2 { font-size: 175%; }
+  h3 { font-size: 125%; }
+  h4 { font-size: 110%; }
+  
+  /* 📝 Lists */
+  ul, ol {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  /* 💻 Inline code */
+  code {
+    font-family: var(--font-mono);
+    background-color: var(--code-bg);
+    color: var(--code-fg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+  
+  /* 📄 Paragraphs & emphasis */
+  p { margin: 1rem 0; }
+  strong { color: var(--foreground-strong); font-weight: 600; }
+  
+  /* 📑 Content container */
+  .pageContent {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 1em 1rem 2rem;
+  }
+  
+  /* ──────────────────────────────────────────
+     📊 Markdown table styling
+     ────────────────────────────────────────── */
+  
+  /* Make every Markdown table scroll if too wide */
+  .pageContent table {
+    display: block;                 /* enables horizontal scrolling */
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 95%;
+  }
+  
+  /* Table head */
+  .pageContent th {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--foreground-strong);
+    background-color: var(--code-bg);
+    border-bottom: 2px solid var(--nav-border-color);
+    white-space: nowrap;            /* keep short headings tight */
+  }
+  
+  /* Table body cells */
+  .pageContent td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--nav-border-color);
+  }
+  
+  /* Zebra striping */
+  .pageContent tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  @media (prefers-color-scheme: dark) {
+    .pageContent tbody tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+  
+  /* Row hover highlight */
+  .pageContent tbody tr:hover {
+    background-color: rgba(0, 112, 243, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    .pageContent tbody tr:hover {
+      background-color: rgba(100, 181, 246, 0.08);
+    }
+  }
+  
+  /* Emphasise first column for key terms */
+  .pageContent td:first-child {
+    font-weight: 500;
+    color: var(--foreground-strong);
+  }
+  

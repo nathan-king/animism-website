@@ -1,86 +1,91 @@
 ---
 title: Seals
 category: Shrines
-summary: About Seals
+summary: Purpose, creation, and ritual use of seals
 ---
 
-A **seal** is a human-made symbol that facilitates a **spiritual connection** between a nexus and a spirit. Seals are crafted with intent and creativity, serving as a focal point to allow a nexus to resonate with the spirit's presence. They are essential in **channeling** and **activating** the spiritual energy of a nexus, making the spirit present and active within the material world.
+# Seals
 
----
+A **seal** is a human‑made symbol that anchors a Spirit to a **nexus**.  
+Without a seal, a created nexus remains inert; with one, the Spirit’s presence is focused and active.
 
-## The Role of Seals
+| Term | Definition |
+|------|------------|
+| **Seal** | Symbol or mark that links Spirit ⇆ nexus |
+| **Nexus** | Physical place or object where a Spirit is embodied |
+| **Shrine** | Structure that houses a nexus and maintains the relationship |
 
-A seal is a symbolic tool, created by humans, that enables a **nexus** to spiritually connect with a spirit. It is through the seal that the spirit's presence is **invoked** and **focused** in the material world. Without a seal, a nexus cannot fully interact with a spirit or express its spiritual power.
 
-- **Connection**: The seal forms the **link** between the physical world (nexus) and the spiritual realm (spirit).
-- **Activation**: The seal activates the nexus, ensuring that the spirit’s energy is concentrated and focused within the designated space or object.
-- **Human Creation**: Seals are designed by humans as an intentional, creative process, giving the spirit a tangible and grounded connection in the material world.
+## 1. Why seals matter
 
----
+| Function | Result |
+|----------|--------|
+| **Connection** | Forms the link between Spirit and material form |
+| **Activation** | Concentrates the Spirit’s presence at the nexus |
+| **Human agency** | Gives practitioners a tangible tool to begin the relationship |
 
-## Creating a Seal
+Without a seal, a created object or site remains a symbol only; with a seal, it becomes a working nexus.
 
-Creating a seal is a human-driven process of **symbolic design** and **creative intention**. It involves:
 
-1. **Choosing the Symbol**: Select or design a symbol that resonates with the spirit you wish to connect with. The symbol should align with the essence of the spirit and be meaningful in the context of the nexus.
-2. **Material Selection**: Choose materials that best represent the spirit and the nexus, whether wood, metal, stone, or cloth. The material should carry its own significance in the spiritual context.
-3. **Crafting the Seal**: The seal is created by physically inscribing, carving, or drawing the symbol onto the chosen material. This act requires care, respect, and a deep connection to the spirit.
-4. **Consecrating the Seal**: Once created, the seal must be consecrated through ritual. The ritual activates the seal, making it an official tool for spiritual connection within the nexus.
+## 2. Steps to create a seal
 
-> Creating a seal is not a simple act of drawing a symbol; it is a **sacred process** that requires mindful intent and respect for the spirit it represents.
+| Step | Action | Key point |
+|------|--------|-----------|
+| 1. Choose a symbol | Design or select a mark that resonates with the Spirit | Must align with the Spirit’s nature |
+| 2. Select material | Wood, stone, metal, cloth, etc. | Material should reinforce the Spirit’s domain |
+| 3. Craft the seal | Inscribe, carve, or draw the symbol | Done with intention and respect |
+| 4. Consecrate | Ritual action activates the seal | Turns artwork into a sacred tool |
 
----
+> Creating a seal is a **sacred process**, not casual decoration.
 
-## Seals for the Great Spirits
 
-The **Great Spirit seals** have been designed specifically to focus the energy of the Great Spirits, ensuring their presence within the material world. Each Great Spirit has a corresponding seal that resonates with their essence and powers.
+## 3. Great Spirit seals
 
-#### Examples:
-- **Ouranos**: A star-like seal, representing the heavens and the sky.
-- **Gaia**: A circular seal with intertwined vines, symbolizing the earth and nature.
+| Great Spirit | Seal concept | Typical nexus location |
+|--------------|-------------|-------------------------|
+| **Ouranos** | Star‑like geometry | Elevated peaks or high plateaus |
+| **Gaia** | Intertwined vines in a circle | Forest groves, fertile ground |
+| *(others forthcoming)* | | |
 
-These seals are integral to the activation and consecration of **Sanctified Nexuses** dedicated to these Great Spirits.
+These seals are predefined and required when establishing a **Sanctified Nexus** for a Great Spirit.
 
-> The **Great Spirit seals** are essential for aligning the spirit’s energy with the physical world. Each seal serves as a unique channel for that spirit's essence.
 
----
+## 4. Finding a new seal
 
-## Finding a Seal
+Most seals are **not** pre‑assigned. Practitioners must:
 
-Other seals must be **found** through a creative process. This is a deeply **human** endeavor, where the practitioner engages in a ritual of **symbol creation** and **spiritual alignment**. The process of finding a seal involves:
+1. **Contemplate** the Spirit’s qualities.  
+2. **Explore** shapes and materials that match those qualities.  
+3. **Test** the design with ritual to confirm it channels the Spirit effectively.
 
-- **Contemplation**: Reflect on the spirit you wish to connect with. What symbols, shapes, or materials resonate with its essence?
-- **Exploration**: Experiment with different designs and symbols, keeping in mind the relationship between the spirit and the nexus.
-- **Testing**: Once a symbol is created, it must be tested through ritual to see if it properly channels the spirit’s energy and resonates with the nexus.
+Only after testing and consecration does a new symbol qualify as a seal.
 
-This process, though creative and human-driven, is essential for establishing a genuine connection between the **spirit** and the **nexus**.
 
----
+## 5. Seal use in ritual
 
-## Seals in Ritual
+1. **Placement** – the seal is fixed to or placed on the nexus.  
+2. **Consecration** – words and actions activate both seal and nexus.  
+3. **Engagement** – the Spirit is now focused and can be honoured at the site.
 
-Seals are used in **rituals** to activate and consecrate a nexus, ensuring that the spirit’s presence is drawn into the material world. The ritual process involves:
 
-1. **Introducing the Seal**: The seal is brought to the nexus, placed upon it, or marked upon it as a visual representation of the spirit.
-2. **Consecrating the Seal**: Through ritualistic actions, the seal is activated, and the nexus is spiritually charged with the spirit’s energy.
-3. **Engaging the Spirit**: Once the seal is activated, the nexus becomes a true **spiritual focal point**, allowing the spirit to interact with the material world.
+## 6. Maintaining a seal
 
-> Rituals are not just acts of symbolism but real **spiritual activations** that bring the seal and nexus into alignment with the spirit.
+| Practice | Purpose |
+|----------|---------|
+| Offerings | Express gratitude and keep presence strong |
+| Regular rites | Re‑align seal, nexus, and Spirit with seasonal changes |
+| Physical care | Keep the seal intact and clean; repair if damaged |
 
----
+A neglected seal weakens the link; a well‑tended seal keeps the nexus vibrant.
 
-## Honoring the Seal
 
-After creating and consecrating a seal, it must be honored and maintained with respect:
+## 7. Quick reference
 
-- **Offerings**: Ritual offerings placed near the seal or nexus as an expression of reverence and gratitude.
-- **Regular Rituals**: Periodic rituals to re-align the seal and nexus, keeping the spirit’s presence active and honored.
-- **Respect**: The seal must be cared for, kept intact, and respected as a sacred tool for spiritual connection.
+| Scenario | Seal needed? |
+|----------|--------------|
+| Natural mountain regarded as Gaia | **Optional** – may add for amplification |
+| Carved figure dedicated to Gaia | **Required** – seal plus shrine |
+| Portable talisman for travel | **Required** – seal consecrated at a stronger nexus |
 
----
-
-## Conclusion
-
-A **seal** is a human-made symbol designed to connect a **nexus** with a spirit. It is a powerful tool that channels the spirit’s presence into the material world. While **Great Spirit seals** are established and linked to specific spirits, most seals must be **found** through a creative and intentional process. Seals are activated through rituals, making them essential for engaging with the spiritual realm.
-
-To learn more about the creation and activation of **nexuses**, visit the [Nexus page](/nexus).
+For details on building shrines, see **[Shrines](/wiki/shrines)**.  
+For full guidelines on nexus types, see **[Nexus](/wiki/nexus)**.

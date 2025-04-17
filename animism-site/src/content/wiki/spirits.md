@@ -1,31 +1,62 @@
 ---
 title: Spirits
 category: Spirits
-summary: About spirits
+summary: How this tradition understands and organises spirits, and how nexuses and shrines ground them in place
 ---
 
-In this tradition, the world is alive with spirits. Every part of reality—cosmic, natural, ancestral, and creative—is animated by presence. These spirits are not separate deities in the sense of distant gods, but manifestations of relation, energy, and meaning. They may be vast or intimate, visible or hidden, collective or personal.
+# Spirits
 
-## A Web of Relationship
+In this animist tradition the world is **alive with presence**.  
+Wind, stone, memory, and imagination are animated—not by distant gods, but by **Spirits** that embody the forces at work in every phenomenon.
 
-Spirits are not isolated beings. They are expressions of an interconnected whole. The boundaries between them are not fixed: the breath of the wind may carry the voice of an ancestor, the light of the moon may reflect a hidden memory, the spirit of a grove may echo the body of Gaia. Every spirit exists in relationship—with others, with us, and with the land.
+All spirits emanate from the following principles:
 
-Across cultures, the same spirit may be known by many names, or many spirits may share a single form. Some gods or spirits in one tradition may reflect a **combination of aspects** from multiple spirits in another—blending elemental, ancestral, or creative forces into a single face. These are not contradictions, but expressions of a living, layered reality.
+| First Principle | Role                            |
+|-----------------|-------------------------------------------------------------|
+| **The Arche**   | Undivided origin — ground of all presence                   |
+| **Chaos**       | Open potential — boundless space where forms can arise      |
+| **Chronos**     | Linear time — one‑directional unfolding that frames events  |
 
-## Types of Spirits
 
-We speak of different kinds of spirits not to divide them, but to understand the many ways they show up in the world. These types blend and flow into each other, but offer a helpful structure for practice and reflection:
+## 1. A Web of Relationship
 
-- [**The Great Spirits**](./great-spirits) — Archetypal forces that shape the cosmos, the elements, and the inner life. These include spirits of earth, sky, time, memory, justice, and transformation.
-  
-- **Local Spirits** *(coming soon)* — Guardians of place, land, and natural features. These are the spirits of forests, rivers, stones, and cities—those who dwell alongside us.
+Spirits do not stand alone.  
+Each is an expression of a larger whole, and **boundaries are porous**: moonlight can carry memory; a mountain can echo Gaia’s fertility.  
+Names differ across cultures, but the underlying presences remain.  
+Apparent overlaps are layers of one living reality, not contradictions.
 
-- **Ancestral Spirits** *(coming soon)* — The spirits of those who came before, both within our bloodlines and within our spiritual or cultural inheritance.
 
-- **Creative Spirits** *(coming soon)* — The muses, the breath of inspiration, the flame of artistic expression and imagination.
+## 2. Spirit Classes
 
-## A Living Tradition
+| Class | Scope | Reference |
+|-------|-------|-----------|
+| [**Great Spirits**](/wiki/great-spirits) | Cosmic forces, elements, human faculties | Complete |
+| **Local Spirits** | Landforms, waters, cities, weather patterns | In progress |
+| **Ancestral Spirits** | Lineage and cultural forerunners | In progress |
+| **Creative Spirits** | Inspiration, craft, innovation | In progress |
 
-This is not a fixed doctrine, but a living tradition. As we deepen our connection with the spirits, new forms and insights may emerge. What matters most is attentiveness, gratitude, and the willingness to live in reciprocal relationship with the world.
 
-To honor the spirits is to recognize that we are not alone—that we are part of a vast, sacred chorus of life.
+## 3. Nexuses and Shrines – the material anchor
+
+| Term | What it is | Purpose |
+|------|------------|---------|
+| **[Nexus](/wiki/nexus)** | Place or object where a Spirit is physically embodied | Makes the Spirit’s presence concrete and recognisable |
+| **[Shrines](/wiki/shrines)** | Deliberate structure that houses a nexus | Maintains the ongoing human–Spirit relationship |
+| **[Seals](/wiki/seals)** | Mark or symbol fixed to the nexus | Focuses and affirms the relationship |
+
+- **Natural nexuses** (e.g., mountains, springs) exist without human action.  
+- **Created nexuses** (carved images, dedicated objects) become active only when sealed and enshrined.  
+- A shrine provides boundary, care, and ritual focus; a seal anchors identity.
+
+
+## 4. Practising Relationship
+
+This framework is **descriptive, not prescriptive**.  
+It guides practitioners to:
+
+1. **Identify** which Spirit’s indicators appear in a place or event.  
+2. **Locate or establish** the corresponding nexus; seal and enshrine it when appropriate.  
+3. **Tend** the relationship through regular care—offering, cleaning, seasonal attention.
+
+The structure may evolve as experience deepens, but its goal is constant:  
+to keep our relationship with a living world **clear, practical, and reciprocal**.

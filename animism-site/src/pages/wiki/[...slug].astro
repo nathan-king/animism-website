@@ -22,6 +22,5 @@ const html = page.rendered?.html;
 
 <WikiLayout pages={allPages}>
   <h1>{page.data.title}</h1>
-  <p>{page.data.summary}</p>
   <article set:html={html}></article>
 </WikiLayout>

@@ -97,6 +97,11 @@
     margin: 0.25rem 0 0;
   }
 
+  .wikiSidebar .postList li {
+    padding-left: 1.5rem;
+  }
+  
+
   .dropdown {
     position: absolute;
     top: 55%;
