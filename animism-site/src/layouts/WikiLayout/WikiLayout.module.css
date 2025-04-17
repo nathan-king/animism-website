@@ -1,26 +1,30 @@
+/* Desktop two‑column flex */
 .wikiLayout {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   gap: 3rem;
   width: 100%;
   padding: 3rem 2rem;
 }
 
-/* Sidebar always sticks to the left */
+/* hidden on desktop */
+.sidebarToggle {
+  display: none;
+}
+
+/* static sidebar on desktop */
 .wikiSidebarContainer {
   width: 260px;
   flex-shrink: 0;
   padding-left: 1rem;
 }
 
-/* Article gets breathing room and is centered with max-width */
+/* main content */
 .wikiArticle {
   flex: 1;
   min-width: 0;
   max-width: 80ch;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -28,18 +32,69 @@
   margin-top: 0;
 }
 
-/* Responsive stacking */
+/* ──────────────────────────────────────────
+   Mobile (<768px): drawer behavior
+   ────────────────────────────────────────── */
 @media (max-width: 768px) {
   .wikiLayout {
     flex-direction: column;
     padding: 1rem;
   }
 
-  .wikiSidebarContainer,
-  .wikiArticle {
-    width: 100%;
-    padding-left: 0;
-    margin-left: 0;
-    margin-right: 0;
+  /* show hamburger */
+  .sidebarToggle {
+    display: none;
+    /* hidden on desktop */
+  }
+
+  @media (max-width: 768px) {
+    .sidebarToggle {
+      display: block;
+      position: fixed;
+      top: 0.75rem;
+      /* just under the top edge */
+      left: 0.75rem;
+      z-index: 9999;
+      /* higher than header/nav */
+      background: var(--background);
+      border: 1px solid var(--nav-border-color);
+      border-radius: 4px;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* off‑canvas sidebar */
+    .wikiSidebarContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 260px;
+      background: var(--background);
+      overflow-y: auto;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1050;
+    }
+
+    /* slide in when body.sidebarOpen is present */
+    body.sidebarOpen .wikiSidebarContainer {
+      transform: translateX(0);
+    }
+
+    /* full‑width content below header */
+    .wikiSidebarContainer,
+    .wikiArticle {
+      width: 100%;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    /* dim article when drawer open */
+    body.sidebarOpen .wikiArticle {
+      filter: brightness(0.8);
+    }
   }
 }

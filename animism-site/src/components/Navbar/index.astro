@@ -5,76 +5,48 @@ const { pages } = Astro.props;
 
 <header class={styles.header}>
   <nav class={styles.nav}>
-    <div class={styles.brand}>
-      <a class={styles.navItem} href="/">The Encosmic Path</a>
-    </div>
+    <!-- Brand on the left -->
+    <a class={styles.brand} href="/">The Encosmic Path</a>
 
-    <ul class={styles.navList}>
-      {
-        pages.map((page: { slug: unknown; children: any[]; title: unknown; }) => (
-          <li
-            class={`${styles.navItemWrapper} navItemWrapper`}
-            data-slug={page.slug}
+    <!-- Hamburger toggle, hidden on desktop -->
+    <button
+      class={styles.toggle}
+      aria-label="Toggle menu"
+      client:load
+      on:click={() => {
+        const nav = document.querySelector(`.${styles.navList}`);
+        nav.classList.toggle(styles.show);
+      }}
+    >
+      ☰
+    </button>
+
+    <!-- Collapsible list -->
+    <ul class={`${styles.navList}`}>
+      {pages.map((page) => (
+        <li class={styles.navItemWrapper} data-slug={page.slug}>
+          <a
+            href={`/${page.slug}`}
+            class={`${styles.navItem} ${page.children?.length ? styles.hasChildren : ""}`}
           >
-            <a
-              href={`/${page.slug}`}
-              class={`${styles.navItem} ${page.children?.length ? styles.hasChildren : ""}`}
-            >
-              {page.title}
-            </a>
-
-            {page.children?.length > 0 && (
-              <ul class={`${styles.dropdown} dropdown`} data-parent={page.slug}>
-                {page.children.map((child: { slug: any; title: unknown; }) => (
-                  <li>
-                    <a href={`/${child.slug}`} class={styles.navItem}>
-                      {child.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))
-      }
+            {page.title}
+          </a>
+          {page.children?.length > 0 && (
+            <ul class={`${styles.dropdown} dropdown`} data-parent={page.slug}>
+              {page.children.map((child) => (
+                <li>
+                  <a href={`/${child.slug}`} class={styles.navItem}>
+                    {child.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
       <li class={styles.navItemWrapper}>
-        <a href={`/library`} class={`${styles.navItem}`}>The Library</a>
+        <a href="/library" class={styles.navItem}>The Library</a>
       </li>
     </ul>
   </nav>
-
-  <script type="module">
-    const wrappers = document.querySelectorAll(".navItemWrapper");
-    const hideTimers = {};
-
-    wrappers.forEach((wrapper) => {
-      const slug = wrapper.dataset.slug;
-      const dropdown = document.querySelector(
-        `.dropdown[data-parent="${slug}"]`,
-      );
-
-      if (!dropdown) return;
-
-      wrapper.addEventListener("mouseenter", () => {
-        clearTimeout(hideTimers[slug]);
-        dropdown.style.display = "block";
-      });
-
-      wrapper.addEventListener("mouseleave", () => {
-        hideTimers[slug] = setTimeout(() => {
-          dropdown.style.display = "none";
-        }, 200); // ⏳ 200ms delay
-      });
-
-      dropdown.addEventListener("mouseenter", () => {
-        clearTimeout(hideTimers[slug]);
-      });
-
-      dropdown.addEventListener("mouseleave", () => {
-        hideTimers[slug] = setTimeout(() => {
-          dropdown.style.display = "none";
-        }, 200);
-      });
-    });
-  </script>
 </header>
