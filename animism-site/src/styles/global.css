@@ -159,3 +159,19 @@
     color: var(--foreground-strong);
   }
   
+  /* ───────── Center stand‑alone pages ───────── */
+.pageWrapper {
+  max-width: 80rem;          /* overall cap ≈1280 px */
+  margin-inline: auto;       /* centres block */
+  padding-inline: 1rem;      /* phone gutters */
+}
+
+.pageWrapper .pageContent {
+  width: clamp(50ch, 80%, 100ch);
+  margin-inline: auto;       /* centre column */
+  padding-block: 2.5rem 3.5rem;
+}
+
+/* optional: heading tweaks for narrower column */
+.pageWrapper h1 { font-size: 190%; }
+.pageWrapper h2 { font-size: 160%; }

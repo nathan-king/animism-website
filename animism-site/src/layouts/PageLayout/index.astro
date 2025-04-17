@@ -3,55 +3,40 @@ import { getCollection } from 'astro:content';
 import Navbar from '../../components/Navbar/index.astro';
 import '../../styles/global.css';
 
-// Fetch all markdown pages
+/* ── fetch and organise Markdown pages for the navbar ────────── */
 const flatPages = await getCollection('pages');
 
-// ✅ Filter to include only:
-// - Top-level (e.g. "about")
-// - Second-level (e.g. "beliefs/ethics")
-// - Third-level only if it's an index page (e.g. "beliefs/spirits/index")
-const filteredPages = flatPages.filter((page) => {
-  const segments = page.slug.split('/');
+/* keep:
+   • top‑level pages   →  "about"
+   • second‑level      →  "beliefs/ethics"
+   • third‑level only  →  "beliefs/spirits/index"                */
+const filteredPages = flatPages.filter((p) => {
+  const seg = p.slug.split('/');
   return (
-    segments.length <= 2 || // keep top and second level
-    (segments.length === 3 && segments[2] === 'index') // allow third level only if it's index.md
+    seg.length <= 2 ||         // top / second
+    (seg.length === 3 && seg[2] === 'index') // third‑level index.md
   );
 });
 
-// ✅ Nest them for dropdown menus
+/* build a tree so Navbar can render dropdowns */
 function nestPages(pages) {
   const tree = {};
+  for (const p of pages) {
+    const parts = p.slug.split('/');
+    const top   = parts[0];
+    const rest  = parts.slice(1);
 
-  for (const page of pages) {
-    const parts = page.slug.split('/');
-    const top = parts[0];
-    const rest = parts.slice(1);
+    if (!tree[top]) tree[top] = { title: p.data.title, slug: top, children: [] };
 
-    if (!tree[top]) {
-      tree[top] = {
-        title: page.data.title,
-        slug: top,
-        children: [],
-      };
-    }
-
-    // second-level pages (or third-level index.md)
+    // second‑level or third‑level index
     if (rest.length === 1 && rest[0] !== 'index') {
-      tree[top].children.push({
-        title: page.data.title,
-        slug: `${top}/${rest[0]}`,
-      });
+      tree[top].children.push({ title: p.data.title, slug: `${top}/${rest[0]}` });
     } else if (rest.length === 2 && rest[1] === 'index') {
-      tree[top].children.push({
-        title: page.data.title,
-        slug: `${top}/${rest[0]}`,
-      });
+      tree[top].children.push({ title: p.data.title, slug: `${top}/${rest[0]}` });
     } else if (rest.length === 0) {
-      // override top-level title
-      tree[top].title = page.data.title;
+      tree[top].title = p.data.title; // override top title
     }
   }
-
   return Object.values(tree);
 }
 
@@ -63,10 +48,16 @@ const pages = nestPages(filteredPages);
     <meta charset="UTF-8" />
     <title>My Site</title>
   </head>
+
   <body>
+    <!-- navigation -->
     <Navbar pages={pages} />
-    <main class="pageContent">
-      <slot />
+
+    <!-- centred page content -->
+    <main class="pageWrapper">
+      <article class="pageContent">
+        <slot />               <!-- Markdown output -->
+      </article>
     </main>
   </body>
 </html>
