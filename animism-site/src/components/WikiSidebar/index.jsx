@@ -1,4 +1,5 @@
-import { useState } from 'react';
+// src/components/WikiSidebar/WikiSidebar.jsx
+import { useState, useEffect, useRef } from 'react';
 import styles from './WikiSidebar.module.css';
 
 export default function WikiSidebar({ entries }) {
@@ -6,6 +7,9 @@ export default function WikiSidebar({ entries }) {
   const [openCategories, setOpenCategories] = useState({});
   const [showDropdown, setShowDropdown] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const sidebarRef = useRef(null);
+  const toggleRef  = useRef(null);
 
   const filtered = entries.filter(entry =>
     entry.data.title.toLowerCase().includes(query.toLowerCase())
@@ -28,10 +32,28 @@ export default function WikiSidebar({ entries }) {
     setOpenCategories(prev => ({ ...prev, [category]: !prev[category] }));
   };
 
+  // close sidebar on outside click
+  useEffect(() => {
+    if (!sidebarOpen) return;
+    function onClickOutside(e) {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(e.target)
+      ) {
+        setSidebarOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', onClickOutside);
+    return () => document.removeEventListener('mousedown', onClickOutside);
+  }, [sidebarOpen]);
+
   return (
     <>
-      {/* Mobile toggle button (magnifier icon) */}
+      {/* Mobile toggle button (magnifier icon / X) */}
       <button
+        ref={toggleRef}
         className={styles.sidebarToggle}
         aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
         onClick={() => setSidebarOpen(o => !o)}
@@ -39,7 +61,10 @@ export default function WikiSidebar({ entries }) {
         {sidebarOpen ? '✕' : '🔍'}
       </button>
 
-      <aside className={`${styles.wikiSidebar} ${sidebarOpen ? styles.open : ''}`}>
+      <aside
+        ref={sidebarRef}
+        className={`${styles.wikiSidebar} ${sidebarOpen ? styles.open : ''}`}
+      >
         <form onSubmit={e => e.preventDefault()} style={{ position: 'relative' }}>
           <input
             type="search"
