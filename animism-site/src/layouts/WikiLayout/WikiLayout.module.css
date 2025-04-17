@@ -1,4 +1,4 @@
-/* Desktop two‑column flex */
+/* Desktop: two‑column flex */
 .wikiLayout {
   display: flex;
   align-items: flex-start;
@@ -7,19 +7,14 @@
   padding: 3rem 2rem;
 }
 
-/* hidden on desktop */
-.sidebarToggle {
-  display: none;
-}
-
-/* static sidebar on desktop */
+/* Sidebar container remains always visible */
 .wikiSidebarContainer {
   width: 260px;
   flex-shrink: 0;
   padding-left: 1rem;
 }
 
-/* main content */
+/* Main content column */
 .wikiArticle {
   flex: 1;
   min-width: 0;
@@ -27,74 +22,41 @@
   margin: 0 auto;
   padding: 0;
 }
-
 .wikiArticle h1:first-child {
   margin-top: 0;
 }
 
-/* ──────────────────────────────────────────
-   Mobile (<768px): drawer behavior
-   ────────────────────────────────────────── */
+/* Mobile (<768px): column layout and centered article */
 @media (max-width: 768px) {
   .wikiLayout {
     flex-direction: column;
     padding: 1rem;
+    gap: 1rem;
   }
 
-  /* show hamburger */
-  .sidebarToggle {
-    display: none;
-    /* hidden on desktop */
+  /* Sidebar becomes fixed but always visible */
+  .wikiSidebarContainer {
+    position: relative;
+    top: auto;
+    left: auto;
+    height: auto;
+    width: 100%;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+    z-index: auto;
   }
 
-  @media (max-width: 768px) {
-    .sidebarToggle {
-      display: block;
-      position: fixed;
-      top: 0.75rem;
-      /* just under the top edge */
-      left: 0.75rem;
-      z-index: 9999;
-      /* higher than header/nav */
-      background: var(--background);
-      border: 1px solid var(--nav-border-color);
-      border-radius: 4px;
-      padding: 0.5rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+  /* Center article with minimal padding */
+  .wikiArticle {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
-    /* off‑canvas sidebar */
-    .wikiSidebarContainer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 260px;
-      background: var(--background);
-      overflow-y: auto;
-      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 1050;
-    }
-
-    /* slide in when body.sidebarOpen is present */
-    body.sidebarOpen .wikiSidebarContainer {
-      transform: translateX(0);
-    }
-
-    /* full‑width content below header */
-    .wikiSidebarContainer,
-    .wikiArticle {
-      width: 100%;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    /* dim article when drawer open */
-    body.sidebarOpen .wikiArticle {
-      filter: brightness(0.8);
-    }
+  /* Remove dimming behavior */
+  body.sidebarOpen .wikiArticle {
+    filter: none;
   }
 }

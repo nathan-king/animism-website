@@ -1,5 +1,4 @@
 ---
-// src/layouts/WikiLayout/index.astro
 import WikiSidebar from '../../components/WikiSidebar/index.jsx';
 import PageLayout from '../PageLayout/index.astro';
 import { getCollection } from 'astro:content';
@@ -9,18 +8,8 @@ const wikiEntries = await getCollection('wiki');
 ---
 
 <PageLayout noLayout>
+  <!-- Removed hamburger toggle -->
 
-  <!-- ── MOBILE TOGGLE (now above the header) ── -->
-  <button
-    class={styles.sidebarToggle}
-    aria-label="Toggle sidebar"
-    client:load
-    on:click={() => document.body.classList.toggle('sidebarOpen')}
-  >
-    ☰
-  </button>
-
-  <!-- ── NOW RENDERS HEADER AND CONTENT ── -->
   <div class={styles.wikiLayout}>
     <aside class={styles.wikiSidebarContainer}>
       <WikiSidebar entries={wikiEntries} client:load="react" />
@@ -31,16 +20,3 @@ const wikiEntries = await getCollection('wiki');
     </div>
   </div>
 </PageLayout>
-
-
-  <!-- hydrate this tiny island and hook up the click -->
-    <script is:inline type="module">
-      window.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('sidebarToggle');
-        if (btn) {
-          btn.addEventListener('click', () => {
-            document.body.classList.toggle('sidebarOpen');
-          });
-        }
-      });
-    </script>

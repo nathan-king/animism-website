@@ -1,75 +1,89 @@
-/* ──────────────────────────────────────────
-   🧱 Moved from global.css: PageLayout-specific styles
-   ────────────────────────────────────────── */
-
+/* Page wrapper: full width up to 80rem, gutter on all viewports, hide any horizontal overflow */
 .pageWrapper {
-  max-width: 80rem;            /* overall cap ≈1280 px */
-  margin-inline: auto;         /* centres block */
-  padding-inline: 1rem;        /* phone gutters */
-}
-
-.pageWrapper .pageContent {
-  width: clamp(50ch, 80%, 100ch);
-  margin-inline: auto;         /* centre column */
-  padding-block: 2.5rem 3.5rem;
-}
-
-/* Optional: heading tweaks for narrower column */
-.pageWrapper h1 {
-  font-size: 190%;
-}
-
-.pageWrapper h2 {
-  font-size: 160%;
-}
-
-/* Markdown table layout can remain here if you want it page-specific */
-.pageContent table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 95%;
-}
-
-.pageContent th {
-  padding: 0.6rem 0.8rem;
-  text-align: left;
-  font-weight: 600;
-  color: var(--foreground-strong);
-  background-color: var(--code-bg);
-  border-bottom: 2px solid var(--nav-border-color);
-  white-space: nowrap;
-}
-
-.pageContent td {
-  padding: 0.55rem 0.8rem;
-  border-bottom: 1px solid var(--nav-border-color);
-}
-
-.pageContent tbody tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
-@media (prefers-color-scheme: dark) {
+    width: 100%;
+    max-width: 80rem;           /* ≈1280px cap */
+    margin: 0 auto;            /* center horizontally */
+    padding: 0 1rem;           /* horizontal gutters */
+    box-sizing: border-box;
+    overflow-x: hidden;        /* prevent accidental overflow */
+  }
+  
+  /* Page content: limit line length, center children, vertical padding */
+  .pageWrapper .pageContent {
+    width: 100%;
+    max-width: 100ch;          /* comfortable reading width */
+    margin: 0 auto;
+    padding: 2.5rem 0;         /* vertical breathing room */
+    box-sizing: border-box;
+  }
+  
+  /* Adjust headings for a narrower column */
+  .pageWrapper h1 {
+    font-size: 1.9em;
+  }
+  .pageWrapper h2 {
+    font-size: 1.6em;
+  }
+  
+  /* Tables: scroll horizontally but don’t break layout */
+  .pageContent table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 95%;
+  }
+  
+  .pageContent th {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--foreground-strong);
+    background-color: var(--code-bg);
+    border-bottom: 2px solid var(--nav-border-color);
+    white-space: nowrap;
+  }
+  
+  .pageContent td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--nav-border-color);
+    word-break: break-word;    /* wrap long text */
+  }
+  
   .pageContent tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.03);
   }
-}
-
-.pageContent tbody tr:hover {
-  background-color: rgba(0, 112, 243, 0.06);
-}
-
-@media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
+    .pageContent tbody tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+  
   .pageContent tbody tr:hover {
-    background-color: rgba(100, 181, 246, 0.08);
+    background-color: rgba(0, 112, 243, 0.06);
   }
-}
-
-.pageContent td:first-child {
-  font-weight: 500;
-  color: var(--foreground-strong);
-}
+  @media (prefers-color-scheme: dark) {
+    .pageContent tbody tr:hover {
+      background-color: rgba(100, 181, 246, 0.08);
+    }
+  }
+  
+  .pageContent td:first-child {
+    font-weight: 500;
+    color: var(--foreground-strong);
+  }
+  
+  /* ──────────────────────────────────────────
+     📱 Responsive tweaks
+     ────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .pageWrapper {
+      padding: 0 0.75rem;      /* reduce gutters on small screens */
+    }
+    .pageWrapper .pageContent {
+      padding: 1.5rem 0;
+    }
+  }

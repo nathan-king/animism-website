@@ -1,3 +1,5 @@
+/* src/components/Navbar/Navbar.module.css */
+
 /* 🌐 Header styling */
 .header {
   background-color: var(--background);
@@ -7,17 +9,19 @@
   z-index: 500;
 }
 
+/* 🌐 Nav container */
 .nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
-  position: relative;
   gap: 2rem;
 }
 
+/* Brand */
 .brand {
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--foreground-strong);
@@ -25,29 +29,30 @@
   margin-right: auto;
 }
 
-/* ☰ Mobile toggle */
+/* ☰ Mobile toggle (hidden desktop) */
 .toggle {
   display: none;
   background: none;
+  border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  border: none;
   color: var(--foreground);
   z-index: 600;
 }
 
+/* Main nav list (desktop) */
 .navList {
   display: flex;
   gap: 1.5rem;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   position: relative;
 }
 
-.navList.show {
-  /* force display on mobile */
-  display: flex !important;
+/* Exported "open" class for mobile slide-in */
+.navList.open {
+  /* slide-in behavior applied in mobile media query */
 }
 
 .navItemWrapper {
@@ -55,16 +60,13 @@
 }
 
 .navItem {
+  font-weight: 500;
   color: var(--foreground);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-  display: inline-block;
   padding: 0.5rem 0.75rem;
   white-space: nowrap;
-  cursor: pointer;
+  transition: color 0.2s ease;
 }
-
 .navItem:hover {
   color: var(--link);
 }
@@ -76,7 +78,7 @@
   margin-left: 0.25rem;
 }
 
-/* Dropdown menu (initially hidden, controlled by JS) */
+/* Dropdown menu (desktop) */
 .dropdown {
   position: absolute;
   top: calc(100% + 2px);
@@ -85,31 +87,12 @@
   border: 1px solid var(--nav-border-color);
   border-top: none;
   display: none;
-  list-style: none;
-  z-index: 700;
   padding: 0.5rem 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  min-width: 150px;
-  border-radius: 0 0 8px 8px;
+  z-index: 700;
 }
-
-.dropdown li {
-  margin: 0;
-  padding: 0;
-}
-
-.dropdown a {
+.navItemWrapper:hover > .dropdown {
   display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: var(--foreground);
-  transition: background 0.2s ease;
-  border-radius: 4px;
-}
-
-.dropdown a:hover {
-  background-color: var(--nav-hover-bg, rgba(0, 0, 0, 0.05));
-  color: var(--link);
 }
 
 /* 📱 Mobile styles */
@@ -119,30 +102,42 @@
   }
 
   .navList {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    /* vertical sliding drawer on the right */
+    position: fixed;
+    top: 0;
     right: 0;
+    height: 100vh;
+    width: 75%;
+    max-width: 300px;
+    background: var(--background);
     flex-direction: column;
-    background-color: var(--background);
-    padding: 1rem;
-    display: none;
-    gap: 0.5rem;
+    padding: 4rem 1rem 1rem;    /* added top padding to clear toggle */
+    gap: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
     z-index: 550;
+    /* box shadow for depth on mobile */
+    box-shadow: -2px 0 8px var(--nav-shadow-color);
   }
 
-  .navList.show {
-    display: flex;
+  /* slide in when .open is toggled */
+  .navList.open {
+    transform: translateX(0);
+  }
+
+  /* center the brand text */
+  .brand {
+    margin: 0 auto;
   }
 
   .navItemWrapper .dropdown {
     position: static;
-    display: block;
-    background: transparent;
     border: none;
     box-shadow: none;
+    background: transparent;
     padding-left: 1rem;
     margin-top: 0.25rem;
+    display: block;
   }
 
   .dropdown a {
@@ -150,6 +145,6 @@
   }
 
   .hasChildren::after {
-    content: ""; /* Hide ▼ on mobile */
+    content: ''; /* hide on mobile */
   }
 }

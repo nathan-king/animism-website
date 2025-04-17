@@ -1,13 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
-import Navbar from '../../components/Navbar/index.astro';
+import Navbar from '../../components/Navbar/index.jsx';
 import styles from './PageLayout.module.css';
 import '../../styles/global.css';
 
 const { noLayout = false } = Astro.props;
 
 const flatPages = await getCollection('pages');
-
 const filteredPages = flatPages.filter((p) => {
   const seg = p.slug.split('/');
   return (
@@ -20,8 +19,8 @@ function nestPages(pages) {
   const tree = {};
   for (const p of pages) {
     const parts = p.slug.split('/');
-    const top   = parts[0];
-    const rest  = parts.slice(1);
+    const top = parts[0];
+    const rest = parts.slice(1);
 
     if (!tree[top]) tree[top] = { title: p.data.title, slug: top, children: [] };
 
@@ -47,8 +46,8 @@ const pages = nestPages(filteredPages);
   </head>
 
   <body>
-    <!-- navigation -->
-    <Navbar pages={pages}/>
+    <!-- navigation (hydrate the Navbar on load) -->
+    <Navbar pages={pages} client:load />
 
     <main class={!noLayout ? styles.pageWrapper : ''}>
       <article class={!noLayout ? styles.pageContent : ''}>
