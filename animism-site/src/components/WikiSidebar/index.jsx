@@ -19,7 +19,7 @@ export default function WikiSidebar({ entries }) {
 
   function handleKeyDown(e) {
     if (e.key === 'Enter' && filtered.length > 0) {
-      window.location.href = `/wiki/${filtered[0].slug}`;
+      window.location.href = `/library/${filtered[0].slug}`;
     }
   }
 
@@ -35,7 +35,7 @@ export default function WikiSidebar({ entries }) {
       <form onSubmit={(e) => e.preventDefault()} style={{ position: 'relative' }}>
         <input
           type="search"
-          placeholder="Search entries..."
+          placeholder="Search chapters..."
           value={query}
           className={`${styles.searchInput} ${filtered.length > 0 ? styles.hasDropdown : ''}`}
           onChange={(e) => {
@@ -54,7 +54,7 @@ export default function WikiSidebar({ entries }) {
                 <li><hr className={styles.dropdownDivider} /></li>
                 {filtered.map((entry) => (
                   <li key={entry.slug}>
-                    <a href={`/wiki/${entry.slug}`}>{entry.data.title}</a>
+                    <a href={`/library/${entry.slug}`}>{entry.data.title}</a>
                   </li>
                 ))}
               </>
@@ -65,7 +65,7 @@ export default function WikiSidebar({ entries }) {
         )}
       </form>
 
-      <h2>Entries</h2>
+      <h2>Topics</h2>
       {Object.entries(postsByCategory).map(([category, entries]) => (
         <div key={category} className={styles.categoryGroup}>
           <button
@@ -80,7 +80,7 @@ export default function WikiSidebar({ entries }) {
             <ul className={styles.postList}>
               {entries.map((entry) => (
                 <li key={entry.slug}>
-                  <a href={`/wiki/${entry.slug}`}>{entry.data.title}</a>
+                  <a href={`/library/${entry.slug}`}>{entry.data.title}</a>
                 </li>
               ))}
             </ul>

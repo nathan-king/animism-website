@@ -4,8 +4,6 @@ category: Spirits
 summary: How this tradition understands and organises spirits, and how nexuses and shrines ground them in place
 ---
 
-# Spirits
-
 In this animist tradition the world is **alive with presence**.  
 Wind, stone, memory, and imagination are animated—not by distant gods, but by **Spirits** that embody the forces at work in every phenomenon.
 

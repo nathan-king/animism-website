@@ -26,8 +26,6 @@ Our framework is more than myth—it is a practical path:
 
 Our cosmology is loosely based on ancient Greek thought but is uniquely reimagined for our time. Rather than a fixed dogma, our beliefs invite exploration, dialogue, and growth—making space for new insights while learning respectfully from the traditions that came before.
 
----
-
 Explore the deeper details on our:
 - [Great Spirits](/the-great-spirits) page
 - [Local Spirits](/local-spirits) page

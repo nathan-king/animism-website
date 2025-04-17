@@ -1,0 +1,35 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import WikiLayout from "../../layouts/WikiLayout/index.astro";
+import styles from "./Wiki.module.css"; // optional: only if you want scoped article styles
+
+// Dynamic routing
+export async function getStaticPaths() {
+  const entries = await getCollection("wiki");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+
+// Load data
+const { slug } = Astro.params;
+const page = await getEntry("wiki", slug);
+const allPages = await getCollection("wiki");
+
+if (!page) {
+  throw new Error(`Wiki page not found: ${slug}`);
+}
+
+const html = page.rendered?.html;
+---
+
+<WikiLayout posts={allPages}>
+  <div class={styles.article}>
+    <h1>{page.data.title}</h1>
+    <article set:html={html} />
+    <hr />
+    <div>
+      <p>Return to <a href="/library">library home.</a></p>
+    </div>
+  </div>
+</WikiLayout>

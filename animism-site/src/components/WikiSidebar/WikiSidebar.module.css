@@ -3,7 +3,7 @@
     width: 260px;
     background-color: var(--background);
     border-right: 1px solid var(--nav-border-color);
-    box-shadow: 2px 0 4px var(--nav-shadow-color);
+    box-shadow: 2px 2px 4px var(--nav-shadow-color);
     height: 100vh;
     overflow-y: auto;
     position: sticky;

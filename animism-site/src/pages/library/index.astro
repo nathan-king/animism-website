@@ -1,5 +1,6 @@
 ---
 import WikiLayout from '../../layouts/WikiLayout/index.astro';
+import styles from './Wiki.module.css';
 import { getCollection } from 'astro:content';
 
 // Load all wiki entries
@@ -7,7 +8,6 @@ const wikiEntries = await getCollection('wiki');
 
 // Group by category
 const grouped = {};
-
 for (const entry of wikiEntries) {
   const category = entry.data.category || 'Uncategorised';
   if (!grouped[category]) grouped[category] = [];
@@ -24,19 +24,21 @@ const sortedCategories = Object.keys(grouped).sort();
 ---
 
 <WikiLayout posts={wikiEntries}>
-  <h1>Wiki</h1>
+  <h1>Library</h1>
   <p>Browse topics by category:</p>
 
-  {sortedCategories.map(category => (
-    <section>
-      <h2>{category}</h2>
-      <ul>
-        {grouped[category].map(entry => (
-          <li>
-            <a href={`/wiki/${entry.slug}`}>{entry.data.title}</a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  ))}
+  <div class={styles.categoryGrid}>
+    {sortedCategories.map(category => (
+      <div class={styles.categoryCard}>
+        <h2>{category}</h2>
+        <ul>
+          {grouped[category].map(entry => (
+            <li>
+              <a href={`/library/${entry.slug}`}>{entry.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
 </WikiLayout>

@@ -10,7 +10,6 @@ Practice in this tradition is grounded in three principles:
 - **Relationship**: Practice exists to foster connection—with spirits, places, ancestors, and the sacred order of things.
 - **Reciprocity**: We do not take without giving, speak without listening, or act without care.
 
----
 
 ## Daily Acts of Reverence
 
@@ -23,7 +22,6 @@ Practice is not limited to formal ritual. It includes small, meaningful acts tha
 
 These simple gestures anchor us in relationship. They are acts of attention.
 
----
 
 ## Ritual and Season
 
@@ -35,7 +33,6 @@ We honor the cycles of life, light, and land. Seasonal rituals mark the turn of 
 
 These observances may be private, communal, or adapted to local climate and ecology. What matters is not perfection, but participation.
 
----
 
 ## Offerings and Gratitude
 
@@ -48,7 +45,6 @@ We offer not to appease but to participate. Offerings are acts of recognition, g
 
 Offerings are not bribes. They are ways of being in right relationship.
 
----
 
 ## Stewardship and Tending
 
@@ -56,7 +52,6 @@ To care for a place is to enter into relationship with its spirit. Acts of stewa
 
 Tending is a core form of spiritual practice. It includes both care for shrines and care for the world beyond them.
 
----
 
 ## The Role of Silence
 
@@ -64,7 +59,6 @@ Silence is not emptiness. It is space for listening.
 
 A practice of silence allows us to hear the subtle, the small, and the sacred. It teaches humility and opens us to presence.
 
----
 
 ## A Living Path
 

@@ -7,10 +7,10 @@ import styles from './WikiLayout.module.css';
 const wikiEntries = await getCollection('wiki');
 ---
 
-<PageLayout>
+<PageLayout noLayout>
   <div class={styles.wikiLayout}>
     <div class={styles.wikiSidebarContainer}>
-      <WikiSidebar entries={wikiEntries} client:only="react" />
+      <WikiSidebar entries={wikiEntries} client:load="react" />
     </div>
 
     <div class={styles.wikiArticle}>

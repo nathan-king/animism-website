@@ -1,24 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
 import Navbar from '../../components/Navbar/index.astro';
+import styles from './PageLayout.module.css';
 import '../../styles/global.css';
 
-/* ── fetch and organise Markdown pages for the navbar ────────── */
+const { noLayout = false } = Astro.props;
+
 const flatPages = await getCollection('pages');
 
-/* keep:
-   • top‑level pages   →  "about"
-   • second‑level      →  "beliefs/ethics"
-   • third‑level only  →  "beliefs/spirits/index"                */
 const filteredPages = flatPages.filter((p) => {
   const seg = p.slug.split('/');
   return (
-    seg.length <= 2 ||         // top / second
-    (seg.length === 3 && seg[2] === 'index') // third‑level index.md
+    seg.length <= 2 ||
+    (seg.length === 3 && seg[2] === 'index')
   );
 });
 
-/* build a tree so Navbar can render dropdowns */
 function nestPages(pages) {
   const tree = {};
   for (const p of pages) {
@@ -28,13 +25,12 @@ function nestPages(pages) {
 
     if (!tree[top]) tree[top] = { title: p.data.title, slug: top, children: [] };
 
-    // second‑level or third‑level index
     if (rest.length === 1 && rest[0] !== 'index') {
       tree[top].children.push({ title: p.data.title, slug: `${top}/${rest[0]}` });
     } else if (rest.length === 2 && rest[1] === 'index') {
       tree[top].children.push({ title: p.data.title, slug: `${top}/${rest[0]}` });
     } else if (rest.length === 0) {
-      tree[top].title = p.data.title; // override top title
+      tree[top].title = p.data.title;
     }
   }
   return Object.values(tree);
@@ -51,12 +47,11 @@ const pages = nestPages(filteredPages);
 
   <body>
     <!-- navigation -->
-    <Navbar pages={pages} />
+    <Navbar pages={pages}/>
 
-    <!-- centred page content -->
-    <main class="pageWrapper">
-      <article class="pageContent">
-        <slot />               <!-- Markdown output -->
+    <main class={!noLayout ? styles.pageWrapper : ''}>
+      <article class={!noLayout ? styles.pageContent : ''}>
+        <slot />
       </article>
     </main>
   </body>

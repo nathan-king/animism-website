@@ -10,17 +10,20 @@
     margin: 0 auto;
     padding: 1rem 1.5rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: relative;
+    gap: 2rem;
   }
+  
   
   .brand {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--foreground-strong);
     text-decoration: none;
+    margin-right: auto;
   }
+  
   
   /* ☰ Mobile toggle */
   .toggle {
