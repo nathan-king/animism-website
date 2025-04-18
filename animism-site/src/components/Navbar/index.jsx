@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import useTheme from '../../hooks/useTheme';
 import styles from './Navbar.module.css';
-import lightLogo from '../../assets/brand-light.svg?url';
+import lightLogo       from '../../assets/brand-light.svg?url';
+import lightLogoStacked from '../../assets/brand-light-stacked.svg?url';
 import { Sun, Moon } from 'phosphor-react';
 
 export default function Navbar({ pages }) {
@@ -29,21 +30,29 @@ export default function Navbar({ pages }) {
     }
   }, [open, handleClickOutside]);
 
-  const iconEmoji = theme === 'dark' ? <Sun size={24} weight="bold" className={styles.sun}/> : <Moon size={24} weight="bold" className={styles.moon}/>;
+  const icon = theme === 'dark'
+    ? <Sun size={24} weight="bold" className={styles.sun} />
+    : <Moon size={24} weight="bold" className={styles.moon} />;
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         {/* Brand/logo */}
         <a href="/" className={styles.brand}>
-          {theme && (
+          <picture>
+            {/* Stacked logo on small screens */}
+            <source
+              srcSet={lightLogoStacked}
+              media="(max-width: 768px)"
+            />
+            {/* Default logo */}
             <img
               src={lightLogo}
               alt="The Encosmic Path"
               className={styles.brandImage}
-              loading="lazy"
+              loading="eager"
             />
-          )}
+          </picture>
         </a>
 
         {/* Theme toggle */}
@@ -52,7 +61,7 @@ export default function Navbar({ pages }) {
           onClick={toggleTheme}
           aria-label="Toggle theme"
         >
-          {iconEmoji}
+          {icon}
         </button>
 
         {/* Mobile menu toggle */}
@@ -74,9 +83,7 @@ export default function Navbar({ pages }) {
             <li key={page.slug} className={styles.navItemWrapper}>
               <a
                 href={`/${page.slug}`}
-                className={`${styles.navItem} ${
-                  page.children?.length ? styles.hasChildren : ''
-                }`}
+                className={`${styles.navItem} ${page.children?.length ? styles.hasChildren : ''}`}
               >
                 {page.title}
               </a>
