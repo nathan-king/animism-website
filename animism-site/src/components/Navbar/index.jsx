@@ -1,7 +1,8 @@
+// src/components/Navbar/Navbar.jsx
 import { useState, useEffect, useRef, useCallback } from 'react';
 import useTheme from '../../hooks/useTheme';
 import styles from './Navbar.module.css';
-import lightLogo       from '../../assets/brand-light.svg?url';
+import lightLogo from '../../assets/brand-light.svg?url';
 import lightLogoStacked from '../../assets/brand-light-stacked.svg?url';
 import { Sun, Moon } from 'phosphor-react';
 
@@ -11,7 +12,7 @@ export default function Navbar({ pages }) {
   const navRef = useRef(null);
   const toggleRef = useRef(null);
 
-  // Close mobile menu on outside click
+  // Close mobile menu when clicking outside
   const handleClickOutside = useCallback((e) => {
     if (
       navRef.current &&
@@ -30,22 +31,14 @@ export default function Navbar({ pages }) {
     }
   }, [open, handleClickOutside]);
 
-  const icon = theme === 'dark'
-    ? <Sun size={24} weight="bold" className={styles.sun} />
-    : <Moon size={24} weight="bold" className={styles.moon} />;
-
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         {/* Brand/logo */}
         <a href="/" className={styles.brand}>
           <picture>
-            {/* Stacked logo on small screens */}
-            <source
-              srcSet={lightLogoStacked}
-              media="(max-width: 768px)"
-            />
-            {/* Default logo */}
+            {/* stacked logo on mobile */}
+            <source srcSet={lightLogoStacked} media="(max-width: 768px)" />
             <img
               src={lightLogo}
               alt="The Encosmic Path"
@@ -61,7 +54,8 @@ export default function Navbar({ pages }) {
           onClick={toggleTheme}
           aria-label="Toggle theme"
         >
-          {icon}
+          <Moon size={24} weight="bold" className={styles.iconLight} />
+          <Sun  size={24} weight="bold" className={styles.iconDark}  />
         </button>
 
         {/* Mobile menu toggle */}
@@ -83,7 +77,9 @@ export default function Navbar({ pages }) {
             <li key={page.slug} className={styles.navItemWrapper}>
               <a
                 href={`/${page.slug}`}
-                className={`${styles.navItem} ${page.children?.length ? styles.hasChildren : ''}`}
+                className={`${styles.navItem} ${
+                  page.children?.length ? styles.hasChildren : ''
+                }`}
               >
                 {page.title}
               </a>

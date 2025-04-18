@@ -144,3 +144,9 @@
 
 .sun { color: var(--accent-1); }
 .moon { color: var(--accent-1); }
+
+/* Icon visibility via CSS */
+.iconLight { display: inline; }
+.iconDark { display: none; }
+html[data-theme="dark"] .iconLight { display: none; }
+html[data-theme="dark"] .iconDark  { display: inline; }
