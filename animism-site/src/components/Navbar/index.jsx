@@ -1,72 +1,54 @@
-// src/components/Navbar/Navbar.jsx
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import useTheme from '../../hooks/useTheme';
 import styles from './Navbar.module.css';
 import lightLogo from '../../assets/brand-light.svg?url';
-import darkLogo  from '../../assets/brand-dark.svg?url';
 
 export default function Navbar({ pages }) {
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const [theme, toggleTheme] = useTheme();
   const navRef = useRef(null);
   const toggleRef = useRef(null);
 
-  // Read saved theme (or OS preference) on client only
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const saved = window.localStorage.getItem('theme');
-    if (saved) {
-      setTheme(saved);
-    } else {
-      const osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(osDark ? 'dark' : 'light');
+  // Close mobile menu on outside click
+  const handleClickOutside = useCallback((e) => {
+    if (
+      navRef.current &&
+      !navRef.current.contains(e.target) &&
+      toggleRef.current &&
+      !toggleRef.current.contains(e.target)
+    ) {
+      setOpen(false);
     }
   }, []);
 
-  // Apply theme to <html> and persist on client only
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    document.documentElement.setAttribute('data-theme', theme);
-    window.localStorage.setItem('theme', theme);
-  }, [theme]);
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [open, handleClickOutside]);
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    if (!open) return;
-    const handleClickOutside = (e) => {
-      if (
-        navRef.current &&
-        !navRef.current.contains(e.target) &&
-        toggleRef.current &&
-        !toggleRef.current.contains(e.target)
-      ) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [open]);
-
-  const logoSrc = theme === 'dark' ? darkLogo : lightLogo;
   const iconEmoji = theme === 'dark' ? '☀️' : '🌒';
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        {/* Brand */}
-        <a className={styles.brand} href="/">
-          <img
-            src={logoSrc}
-            alt="The Encosmic Path"
-            className={styles.brandImage}
-          />
+        {/* Brand/logo */}
+        <a href="/" className={styles.brand}>
+          {theme && (
+            <img
+              src={lightLogo}
+              alt="The Encosmic Path"
+              className={styles.brandImage}
+              loading="lazy"
+            />
+          )}
         </a>
 
         {/* Theme toggle */}
         <button
           className={styles.toggleButton}
-          onClick={() => setTheme(t => (t === 'dark' ? 'light' : 'dark'))}
+          onClick={toggleTheme}
           aria-label="Toggle theme"
         >
           {iconEmoji}

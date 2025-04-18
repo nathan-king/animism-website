@@ -5,8 +5,6 @@
   background-color: var(--background);
   border-bottom: 1px solid var(--nav-border-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  /* position: relative;
-  z-index: 500; */
 }
 
 /* Main nav container */
@@ -28,6 +26,13 @@
 .brandImage {
   display: block;
   height: 1.1rem;
+  /* smooth invert transition */
+  /* transition: filter var(--transition-duration) var(--transition-ease); */
+}
+
+/* invert the logo in dark mode */
+:global(html[data-theme="dark"]) .brandImage {
+  filter: invert(1) brightness(1.2);
 }
 
 /* Mobile‑only hamburger toggle */
@@ -169,6 +174,5 @@
 
 .toggleButton:hover {
   color: var(--link-hover);
-  transform: scale(1.2);
-  transform: rotate(180deg);
+  transform: scale(1.2) rotate(180deg);
 }
