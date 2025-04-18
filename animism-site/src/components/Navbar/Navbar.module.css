@@ -26,8 +26,6 @@
 .brandImage {
   display: block;
   height: 1.1rem;
-  /* smooth invert transition */
-  /* transition: filter var(--transition-duration) var(--transition-ease); */
 }
 
 /* invert the logo in dark mode */
@@ -176,5 +174,15 @@
 
 .toggleButton:hover {
   color: var(--link-hover);
-  transform: scale(1.2) rotate(180deg);
+  transform: scale(1.2) rotate(360deg);
+   transition: all 0.5s ease-in-out;
 }
+
+.sun {
+  color: var(--accent-1);
+}
+
+.moon {
+  color: var(--accent-1);
+}
+

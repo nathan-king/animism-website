@@ -4,145 +4,153 @@
    Sidebar Container
    ────────────────────────────────────────── */
 
-.wikiSidebar {
-  background-color: var(--background);
-  border-right: 1px solid var(--nav-border-color);
-  box-shadow: 2px 0 4px var(--nav-shadow-color);
-  width: 260px;
-  padding: 1.5rem;
-  font-family: var(--font-sans);
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  transition: transform 0.3s ease;
-  transform: translateX(0);
-  z-index: 500;
-}
-
-/* ──────────────────────────────────────────
+   .wikiSidebar {
+    background-color: var(--background);
+    border-right: 1px solid var(--nav-border-color);
+    box-shadow: 2px 0 4px var(--nav-shadow-color);
+    width: 260px;
+    padding: 1.5rem;
+    font-family: var(--font-sans);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    /* slide and color transitions */
+    transform: translateX(0);
+    transition:
+      transform         var(--transition-duration) var(--transition-ease),
+      background-color  var(--transition-duration) var(--transition-ease),
+      color             var(--transition-duration) var(--transition-ease),
+      border-color      var(--transition-duration) var(--transition-ease);
+    z-index: 500;
+  }
+  
+  /* ──────────────────────────────────────────
      Mobile Toggle Button (always visible on mobile)
      ────────────────────────────────────────── */
-.sidebarToggle {
-  display: block;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 2000;
-  color: var(--foreground);
-}
-
-@media (min-width: 769px) {
   .sidebarToggle {
-    display: none;
+    display: block;
+    position: fixed;
+    top: 1.75rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2000;
+    color: var(--foreground);
   }
-}
-
-/* ──────────────────────────────────────────
+  
+  @media (min-width: 769px) {
+    .sidebarToggle {
+      display: none;
+    }
+  }
+  
+  /* ──────────────────────────────────────────
      Off‑canvas sidebar (mobile) sliding in from left
      ────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .wikiSidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    padding-top: 4rem;
+  @media (max-width: 768px) {
+    .wikiSidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      padding: 4rem 8rem;
+      transform: translateX(-100%);
+      /* base transition still applies */
+    }
+  
+    .wikiSidebar.open {
+      transform: translateX(0);
+    }
   }
-
-  .wikiSidebar.open {
-    transform: translateX(0);
-  }
-}
-
-/* ──────────────────────────────────────────
+  
+  /* ──────────────────────────────────────────
      Search Input & Dropdown
      ────────────────────────────────────────── */
-.searchInput {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 0;
-  border-radius: 6px;
-  border: 1px solid var(--nav-border-color);
-  background-color: var(--code-bg);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  /* removed background-color & color transitions to snap instantly */
-  /* transition:
-    border-color 0.2s ease,
-    border-radius 0.2s ease; */
-}
-
-.searchInput:focus {
-  outline: none;
-  border: 1px solid var(--accent-1);
-}
-
-.hasDropdown {
-  border-radius: 6px 6px 0 0;
-}
-
-.dropdown {
-  position: absolute;
-  top: calc(100% - 1.2rem);
-  left: 0;
-  width: 100%;
-  background-color: var(--code-bg);
-  border: 1px solid var(--accent-1);
-  border-top: none;
-  border-radius: 0 0 6px 6px;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 900;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-  list-style-type: none;
-  padding: 0 .5rem .5rem .5rem;
-}
-
-.dropdownDivider {
-  border: none;
-  border-top: 1px solid var(--nav-border-color);
-  margin: 0.25rem 0;
-}
-
-.noMatch {
-  padding: 0.5rem;
-  color: var(--foreground);
-  opacity: 0.6;
-}
-
-/* ──────────────────────────────────────────
+  .searchInput {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0;
+    border-radius: 6px;
+    border: 1px solid var(--nav-border-color);
+    background-color: var(--code-bg);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    border: 1px solid var(--accent-1);
+  }
+  
+  .hasDropdown {
+    border-radius: 6px 6px 0 0;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: calc(100% - 1.2rem);
+    left: 0;
+    width: 100%;
+    background-color: var(--code-bg);
+    border: 1px solid var(--accent-1);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 900;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    list-style-type: none;
+    padding: 0 .5rem .5rem .5rem;
+  }
+  
+  .dropdownDivider {
+    border: none;
+    border-top: 1px solid var(--nav-border-color);
+    margin: 0.25rem 0;
+  }
+  
+  .noMatch {
+    padding: 0.5rem;
+    color: var(--foreground);
+    opacity: 0.6;
+  }
+  
+  /* ──────────────────────────────────────────
      Categories & Post Lists
      ────────────────────────────────────────── */
-.categoryToggle {
-  background: none;
-  border: none;
-  color: var(--foreground-strong);
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0.25rem 0;
-  font-size: 1rem;
-  text-align: left;
-  width: 100%;
-  margin-bottom: 0.25rem;
-  transition: color 0.2s ease;
-}
-
-.categoryToggle:hover {
-  color: var(--link-hover);
-}
-
-.postList {
-  list-style: none;
-  padding-left: 1rem;
-  margin: 0.25rem 0 0;
-}
-
-.postList li {
-  padding-left: 1.5rem;
-}
+  .categoryToggle {
+    background: none;
+    border: none;
+    color: var(--foreground-strong);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.25rem 0;
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s ease;
+  }
+  
+  .categoryToggle:hover {
+    color: var(--link-hover);
+  }
+  
+  .postList {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0.25rem 0 0;
+  }
+  
+  .postList li {
+    padding-left: 1.5rem;
+  }
+  
+  .toggleIcon {
+    color: var(--foreground);
+  }
+  

@@ -1,6 +1,7 @@
 // src/components/WikiSidebar/WikiSidebar.jsx
 import { useState, useEffect, useRef } from 'react';
 import styles from './WikiSidebar.module.css';
+import { MagnifyingGlass, X } from 'phosphor-react';
 
 export default function WikiSidebar({ entries }) {
   const [query, setQuery] = useState('');
@@ -58,7 +59,7 @@ export default function WikiSidebar({ entries }) {
         aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
         onClick={() => setSidebarOpen(o => !o)}
       >
-        {sidebarOpen ? '✕' : '🔍'}
+        {sidebarOpen ? <X size={24} weight="bold" className={styles.toggleIcon} /> : <MagnifyingGlass size={24} weight="bold" className={styles.toggleIcon} /> }
       </button>
 
       <aside

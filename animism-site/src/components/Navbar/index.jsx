@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import useTheme from '../../hooks/useTheme';
 import styles from './Navbar.module.css';
 import lightLogo from '../../assets/brand-light.svg?url';
+import { Sun, Moon } from 'phosphor-react';
 
 export default function Navbar({ pages }) {
   const [open, setOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Navbar({ pages }) {
     }
   }, [open, handleClickOutside]);
 
-  const iconEmoji = theme === 'dark' ? '☀️' : '🌒';
+  const iconEmoji = theme === 'dark' ? <Sun size={24} weight="bold" className={styles.sun}/> : <Moon size={24} weight="bold" className={styles.moon}/>;
 
   return (
     <header className={styles.header}>
