@@ -4,8 +4,8 @@ category: Spirits
 summary: How this tradition understands and organises spirits, and how nexuses and shrines ground them in place
 ---
 
-In this animist tradition the world is **alive with presence**.  
-Wind, stone, memory, and imagination are animated—not by distant gods, but by **Spirits** that embody the forces at work in every phenomenon.
+In this animist tradition the world is *alive with presence*.  
+Wind, stone, memory, and imagination are animated—not by distant gods, but by spirits that embody the forces at work in every phenomenon.
 
 All spirits emanate from the following principles:
 
@@ -19,19 +19,19 @@ All spirits emanate from the following principles:
 ## 1. A Web of Relationship
 
 Spirits do not stand alone.  
-Each is an expression of a larger whole, and **boundaries are porous**: moonlight can carry memory; a mountain can echo Gaia’s fertility.  
+Each is an expression of a larger whole, and *boundaries are porous*: moonlight can carry memory; a mountain can echo Gaia’s fertility.  
 Names differ across cultures, but the underlying presences remain.  
 Apparent overlaps are layers of one living reality, not contradictions.
 
 
 ## 2. Spirit Classes
 
-| Class | Scope | Reference |
-|-------|-------|-----------|
-| [**Great Spirits**](/wiki/great-spirits) | Cosmic forces, elements, human faculties | Complete |
-| **Local Spirits** | Landforms, waters, cities, weather patterns | In progress |
-| **Ancestral Spirits** | Lineage and cultural forerunners | In progress |
-| **Creative Spirits** | Inspiration, craft, innovation | In progress |
+| Class | Scope |
+|-------|-------|
+| [**Great Spirits**](/library/great-spirits) | Cosmic forces, elements, human faculties |
+| **Local Spirits** | Landforms, waters, cities, weather patterns |
+| **Ancestral Spirits** | Lineage and cultural forerunners |
+| **Creative Spirits** | Inspiration, craft, innovation |
 
 
 ## 3. Nexuses and Shrines – the material anchor
@@ -44,7 +44,7 @@ Apparent overlaps are layers of one living reality, not contradictions.
 
 - **Natural nexuses** (e.g., mountains, springs) exist without human action.  
 - **Created nexuses** (carved images, dedicated objects) become active only when sealed and enshrined.  
-- A shrine provides boundary, care, and ritual focus; a seal anchors identity.
+- A **shrine** provides boundary, care, and ritual focus; a seal anchors identity.
 
 
 ## 4. Practising Relationship

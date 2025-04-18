@@ -8,6 +8,8 @@ A **nexus** is a physical place or object through which a spirit is embodied and
 
 A mountain, a grove, or a spring may be a nexus. A carved figure made from the wood of that grove may also become a nexus when rightly enshrined. These are not metaphors—they are material-spiritual relationships.
 
+![shrine in woods](/images/shrine_in_woods.png)
+
 ---
 
 ## Nexus as Embodiment
