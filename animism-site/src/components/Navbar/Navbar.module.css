@@ -69,6 +69,8 @@
   padding: 0.5rem 0.75rem;
   white-space: nowrap;
   transition: color 0.2s ease;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
 }
 
 .navItem:hover {
