@@ -1,6 +1,6 @@
 /* src/components/Navbar/Navbar.module.css */
 
-/* 🌐 Header styling */
+/* Header wrapper */
 .header {
   background-color: var(--background);
   border-bottom: 1px solid var(--nav-border-color);
@@ -9,7 +9,7 @@
   z-index: 500;
 }
 
-/* 🌐 Nav container */
+/* Main nav container */
 .nav {
   max-width: 1200px;
   margin: 0 auto;
@@ -19,17 +19,18 @@
   gap: 2rem;
 }
 
-/* Brand */
+/* Brand/logo link */
 .brand {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--foreground-strong);
-  text-decoration: none;
   margin-right: auto;
 }
 
-/* ☰ Mobile toggle (hidden desktop) */
+/* Logo image */
+.brandImage {
+  display: block;
+  height: 1.1rem;
+}
+
+/* Mobile‑only hamburger toggle */
 .toggle {
   display: none;
   background: none;
@@ -40,7 +41,7 @@
   z-index: 600;
 }
 
-/* Main nav list (desktop) */
+/* Desktop nav list */
 .navList {
   display: flex;
   gap: 1.5rem;
@@ -50,15 +51,17 @@
   position: relative;
 }
 
-/* Exported "open" class for mobile slide-in */
+/* Open state for mobile menu */
 .navList.open {
-  /* slide-in behavior applied in mobile media query */
+  /* defined under mobile styles */
 }
 
+/* Nav item wrapper for dropdown positioning */
 .navItemWrapper {
   position: relative;
 }
 
+/* Individual nav links */
 .navItem {
   font-weight: 500;
   color: var(--foreground);
@@ -67,18 +70,19 @@
   white-space: nowrap;
   transition: color 0.2s ease;
 }
+
 .navItem:hover {
   color: var(--link);
 }
 
-/* ▼ Dropdown indicator */
+/* Indicator for items with children */
 .hasChildren::after {
   content: " ▼";
   font-size: 0.75rem;
   margin-left: 0.25rem;
 }
 
-/* Dropdown menu (desktop) */
+/* Dropdown menu */
 .dropdown {
   position: absolute;
   top: calc(100% + 2px);
@@ -91,18 +95,18 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 700;
 }
+
 .navItemWrapper:hover > .dropdown {
   display: block;
 }
 
-/* 📱 Mobile styles */
+/* Mobile styles */
 @media (max-width: 768px) {
   .toggle {
     display: block;
   }
 
   .navList {
-    /* vertical sliding drawer on the right */
     position: fixed;
     top: 0;
     right: 0;
@@ -111,21 +115,18 @@
     max-width: 300px;
     background: var(--background);
     flex-direction: column;
-    padding: 4rem 1rem 1rem;    /* added top padding to clear toggle */
+    padding: 4rem 1rem 1rem;
     gap: 1rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 550;
-    /* box shadow for depth on mobile */
     box-shadow: -2px 0 8px var(--nav-shadow-color);
   }
 
-  /* slide in when .open is toggled */
   .navList.open {
     transform: translateX(0);
   }
 
-  /* center the brand text */
   .brand {
     margin: 0 auto;
   }
@@ -145,6 +146,33 @@
   }
 
   .hasChildren::after {
-    content: ''; /* hide on mobile */
+    content: '';
   }
+}
+
+/* Floating theme‑toggle button */
+.toggleButton {
+  all: unset;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 1000;
+
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+  color: var(--toggle-fg);
+  padding: 0.5rem;
+
+  background: none;
+  border: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toggleButton:hover {
+  color: var(--link-hover);
+  transform: scale(1.1);
 }

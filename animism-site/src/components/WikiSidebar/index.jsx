@@ -82,9 +82,9 @@ export default function WikiSidebar({ entries }) {
 
           {showDropdown && (
             <ul className={styles.dropdown}>
+              <hr className={styles.dropdownDivider} />
               {filtered.length > 0 ? (
                 <>
-                  <li><hr className={styles.dropdownDivider} /></li>
                   {filtered.map(entry => (
                     <li key={entry.slug}>
                       <a href={`/library/${entry.slug}`}>{entry.data.title}</a>

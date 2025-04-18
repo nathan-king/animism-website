@@ -32,13 +32,6 @@
   margin-bottom: 0.3rem;
 }
 
-.categoryCard a {
-  color: var(--link);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color 0.2s ease;
-}
-
 .categoryCard a:hover {
   color: var(--link-hover);
 }

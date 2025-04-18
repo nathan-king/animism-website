@@ -14,7 +14,6 @@ const page = await getEntry('pages', slug);
 if (!page) throw new Error(`Page not found: ${slug}`);
 
 const html = page.rendered?.html;
-console.log("DEBUG: Rendered HTML:", html);
 ---
 
 <PageLayout>

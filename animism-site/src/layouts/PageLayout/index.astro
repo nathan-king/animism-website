@@ -1,33 +1,37 @@
 ---
-import { getCollection } from 'astro:content';
-import Navbar from '../../components/Navbar/index.jsx';
-import styles from './PageLayout.module.css';
-import '../../styles/global.css';
+import { getCollection } from "astro:content";
+import Navbar from "../../components/Navbar/index.jsx";
+import styles from "./PageLayout.module.css";
+import "../../styles/global.css";
 
 const { noLayout = false } = Astro.props;
 
-const flatPages = await getCollection('pages');
+const flatPages = await getCollection("pages");
 const filteredPages = flatPages.filter((p) => {
-  const seg = p.slug.split('/');
-  return (
-    seg.length <= 2 ||
-    (seg.length === 3 && seg[2] === 'index')
-  );
+  const seg = p.slug.split("/");
+  return seg.length <= 2 || (seg.length === 3 && seg[2] === "index");
 });
 
 function nestPages(pages) {
   const tree = {};
   for (const p of pages) {
-    const parts = p.slug.split('/');
+    const parts = p.slug.split("/");
     const top = parts[0];
     const rest = parts.slice(1);
 
-    if (!tree[top]) tree[top] = { title: p.data.title, slug: top, children: [] };
+    if (!tree[top])
+      tree[top] = { title: p.data.title, slug: top, children: [] };
 
-    if (rest.length === 1 && rest[0] !== 'index') {
-      tree[top].children.push({ title: p.data.title, slug: `${top}/${rest[0]}` });
-    } else if (rest.length === 2 && rest[1] === 'index') {
-      tree[top].children.push({ title: p.data.title, slug: `${top}/${rest[0]}` });
+    if (rest.length === 1 && rest[0] !== "index") {
+      tree[top].children.push({
+        title: p.data.title,
+        slug: `${top}/${rest[0]}`,
+      });
+    } else if (rest.length === 2 && rest[1] === "index") {
+      tree[top].children.push({
+        title: p.data.title,
+        slug: `${top}/${rest[0]}`,
+      });
     } else if (rest.length === 0) {
       tree[top].title = p.data.title;
     }
@@ -43,14 +47,36 @@ const pages = nestPages(filteredPages);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Site</title>
+  
+    <!-- dynamic favicon you’ll update via JS -->
+    <link
+      id="favicon"
+      rel="icon"
+      href="/favicon-light.svg"
+      sizes="any"
+    />
+  
+    <!-- fallback media‐query favicons (optional) -->
+    <link
+      rel="icon"
+      href="/favicon-light.svg"
+      media="(prefers-color-scheme: light)"
+      sizes="any"
+    />
+    <link
+      rel="icon"
+      href="/favicon-dark.svg"
+      media="(prefers-color-scheme: dark)"
+      sizes="any"
+    />
   </head>
 
   <body>
     <!-- navigation (hydrate the Navbar on load) -->
     <Navbar pages={pages} client:load />
 
-    <main class={!noLayout ? styles.pageWrapper : ''}>
-      <article class={!noLayout ? styles.pageContent : ''}>
+    <main class={!noLayout ? styles.pageWrapper : ""}>
+      <article class={!noLayout ? styles.pageContent : ""}>
         <slot />
       </article>
     </main>
