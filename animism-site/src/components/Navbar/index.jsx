@@ -10,7 +10,7 @@ export default function Navbar({ pages }) {
   const navRef = useRef(null);
   const toggleRef = useRef(null);
 
-  // 1) Read saved theme (or OS preference) on client only
+  // Read saved theme (or OS preference) on client only
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const saved = window.localStorage.getItem('theme');
@@ -22,14 +22,14 @@ export default function Navbar({ pages }) {
     }
   }, []);
 
-  // 2) Apply theme to <html> and persist on client only
+  // Apply theme to <html> and persist on client only
   useEffect(() => {
     if (typeof window === 'undefined') return;
     document.documentElement.setAttribute('data-theme', theme);
     window.localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // 3) Close mobile menu when clicking outside
+  // Close mobile menu when clicking outside
   useEffect(() => {
     if (!open) return;
     const handleClickOutside = (e) => {
@@ -48,23 +48,22 @@ export default function Navbar({ pages }) {
     };
   }, [open]);
 
-  const logoSrc   = theme === 'dark' ? darkLogo  : lightLogo;
-  const iconEmoji = theme === 'dark' ? '☀️'     : '🌒';
+  const logoSrc = theme === 'dark' ? darkLogo : lightLogo;
+  const iconEmoji = theme === 'dark' ? '☀️' : '🌒';
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        {/* Brand (logo will remount when theme changes) */}
+        {/* Brand */}
         <a className={styles.brand} href="/">
           <img
-            key={theme}
             src={logoSrc}
             alt="The Encosmic Path"
             className={styles.brandImage}
           />
         </a>
 
-        {/* Theme toggle (bottom‑left floating button via CSS) */}
+        {/* Theme toggle */}
         <button
           className={styles.toggleButton}
           onClick={() => setTheme(t => (t === 'dark' ? 'light' : 'dark'))}

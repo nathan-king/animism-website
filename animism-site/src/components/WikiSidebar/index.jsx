@@ -9,7 +9,7 @@ export default function WikiSidebar({ entries }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sidebarRef = useRef(null);
-  const toggleRef  = useRef(null);
+  const toggleRef = useRef(null);
 
   const filtered = entries.filter(entry =>
     entry.data.title.toLowerCase().includes(query.toLowerCase())
@@ -70,7 +70,10 @@ export default function WikiSidebar({ entries }) {
             type="search"
             placeholder="Search chapters..."
             value={query}
-            className={`${styles.searchInput} ${filtered.length > 0 ? styles.hasDropdown : ''}`}
+            className={`
+      ${styles.searchInput}
+      ${showDropdown ? styles.hasDropdown : ''}
+    `}
             onChange={e => {
               setQuery(e.target.value);
               setShowDropdown(e.target.value.length > 0);
@@ -84,19 +87,18 @@ export default function WikiSidebar({ entries }) {
             <ul className={styles.dropdown}>
               <hr className={styles.dropdownDivider} />
               {filtered.length > 0 ? (
-                <>
-                  {filtered.map(entry => (
-                    <li key={entry.slug}>
-                      <a href={`/library/${entry.slug}`}>{entry.data.title}</a>
-                    </li>
-                  ))}
-                </>
+                filtered.map(entry => (
+                  <li key={entry.slug}>
+                    <a href={`/library/${entry.slug}`}>{entry.data.title}</a>
+                  </li>
+                ))
               ) : (
                 <li className={styles.noMatch}>No results found</li>
               )}
             </ul>
           )}
         </form>
+
 
         <h2>Topics</h2>
         {Object.entries(postsByCategory).map(([category, items]) => (

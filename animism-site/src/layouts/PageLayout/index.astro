@@ -19,8 +19,9 @@ function nestPages(pages) {
     const top = parts[0];
     const rest = parts.slice(1);
 
-    if (!tree[top])
+    if (!tree[top]) {
       tree[top] = { title: p.data.title, slug: top, children: [] };
+    }
 
     if (rest.length === 1 && rest[0] !== "index") {
       tree[top].children.push({
@@ -47,16 +48,36 @@ const pages = nestPages(filteredPages);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Site</title>
-  
-    <!-- dynamic favicon you’ll update via JS -->
+
+    <!-- 1) Prevent flash: hide until data-theme is set -->
+    <style>
+      html { visibility: hidden; }
+      html[data-theme] { visibility: visible; }
+    </style>
+
+    <!-- 2) Immediately pick the proper theme before paint -->
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .matches;
+          const theme = saved || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
+
+    <!-- 3) Favicon links -->
     <link
       id="favicon"
       rel="icon"
       href="/favicon-light.svg"
       sizes="any"
     />
-  
-    <!-- fallback media‐query favicons (optional) -->
     <link
       rel="icon"
       href="/favicon-light.svg"
@@ -72,7 +93,6 @@ const pages = nestPages(filteredPages);
   </head>
 
   <body>
-    <!-- navigation (hydrate the Navbar on load) -->
     <Navbar pages={pages} client:load />
 
     <main class={!noLayout ? styles.pageWrapper : ""}>

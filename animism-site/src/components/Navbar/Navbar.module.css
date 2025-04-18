@@ -5,8 +5,8 @@
   background-color: var(--background);
   border-bottom: 1px solid var(--nav-border-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  position: relative;
-  z-index: 500;
+  /* position: relative;
+  z-index: 500; */
 }
 
 /* Main nav container */
@@ -49,11 +49,6 @@
   margin: 0;
   padding: 0;
   position: relative;
-}
-
-/* Open state for mobile menu */
-.navList.open {
-  /* defined under mobile styles */
 }
 
 /* Nav item wrapper for dropdown positioning */
@@ -155,7 +150,7 @@
   all: unset;
   position: fixed;
   bottom: 2rem;
-  left: 2rem;
+  right: 2rem;
   z-index: 1000;
 
   cursor: pointer;
@@ -174,5 +169,6 @@
 
 .toggleButton:hover {
   color: var(--link-hover);
-  transform: scale(1.1);
+  transform: scale(1.2);
+  transform: rotate(180deg);
 }
