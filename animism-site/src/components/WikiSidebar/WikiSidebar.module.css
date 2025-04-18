@@ -32,11 +32,10 @@
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 2000;
-    color: var(--foreground); /* ensure icon uses current theme color */
+    color: var(--foreground);
   }
   
   @media (min-width: 769px) {
-    /* hide toggle on larger screens */
     .sidebarToggle {
       display: none;
     }
@@ -51,7 +50,7 @@
       top: 0;
       left: 0;
       transform: translateX(-100%);
-      padding-top: 4rem;   /* extra space to clear toggle */
+      padding-top: 4rem;
     }
   
     .wikiSidebar.open {
@@ -72,13 +71,12 @@
     color: var(--foreground);
     font-family: var(--font-sans);
     font-size: 1rem;
+    /* removed background-color & color transitions to snap instantly */
     transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
       border-color 0.2s ease,
       border-radius 0.2s ease;
   }
-
+  
   .searchInput:focus {
     outline: none;
     border: 1px solid var(--accent-1);
@@ -147,5 +145,4 @@
   .postList li {
     padding-left: 1.5rem;
   }
-  
   

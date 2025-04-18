@@ -49,13 +49,13 @@ const pages = nestPages(filteredPages);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Site</title>
 
-    <!-- 1) Prevent flash: hide until data-theme is set -->
+    <!-- Prevent flash: hide until data-theme is set -->
     <style>
       html { visibility: hidden; }
       html[data-theme] { visibility: visible; }
     </style>
 
-    <!-- 2) Immediately pick the proper theme before paint -->
+    <!-- Immediately pick the proper theme before paint -->
     <script>
       (function () {
         try {
@@ -71,7 +71,7 @@ const pages = nestPages(filteredPages);
       })();
     </script>
 
-    <!-- 3) Favicon links -->
+    <!-- Favicon links -->
     <link
       id="favicon"
       rel="icon"
@@ -93,6 +93,7 @@ const pages = nestPages(filteredPages);
   </head>
 
   <body>
+    <!-- navigation (hydrate on load) -->
     <Navbar pages={pages} client:load />
 
     <main class={!noLayout ? styles.pageWrapper : ""}>
