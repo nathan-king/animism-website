@@ -11,9 +11,9 @@
   /* Page content: limit line length, center children, vertical padding */
   .pageWrapper .pageContent {
     width: 100%;
-    max-width: 100ch;          /* comfortable reading width */
+    max-width: 1100px;          /* comfortable reading width */
     margin: 0 auto;
-    padding: 2.5rem 0;         /* vertical breathing room */
+    padding: 2.5rem 1.5rem;         /* vertical breathing room */
     box-sizing: border-box;
   }
   

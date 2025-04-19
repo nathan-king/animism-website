@@ -9,7 +9,7 @@
 
 /* Main nav container */
 .nav {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 1rem 1.5rem;
   display: flex;
@@ -48,10 +48,43 @@
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
-  color: var(--foreground);
+  padding: 0;
   z-index: 600;
+}
+
+/* bars of the burger */
+.toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: var(--foreground);
+  border-radius: 0.1rem;
+  margin: 0.3rem 0;
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* transform bars into X when open */
+.toggle.open span:nth-child(1) {
+  transform: translateY(0.5rem) rotate(45deg);
+}
+.toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.toggle.open span:nth-child(3) {
+  transform: translateY(-0.5rem) rotate(-45deg);
+}
+
+/* show the burger on mobile */
+@media (max-width: 768px) {
+  .toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+  }
 }
 
 /* Desktop nav list */
@@ -78,31 +111,19 @@
   color: var(--link);
 }
 
-/* Mobile styles */
+/* Mobile styles for nav drawer */
 @media (max-width: 768px) {
-  /* increase nav padding to fit larger logo */
   .nav {
     padding: .25rem 1.5rem;
     justify-content: center;
     align-items: center;
   }
 
-  /* center brand in flow */
   .brand {
     position: static;
     margin: 0 auto;
   }
 
-  /* position burger toggle on right */
-  .toggle {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 1.5rem;
-    transform: translateY(-50%);
-  }
-
-  /* off‑canvas nav drawer */
   .navList {
     position: fixed;
     top: 0;
@@ -118,6 +139,7 @@
     box-shadow: -2px 0 8px var(--nav-shadow-color);
     z-index: 550;
   }
+
   .navList.open {
     transform: translateX(0);
   }
@@ -142,11 +164,8 @@
   transform: scale(1.2) rotate(360deg);
 }
 
-.sun { color: var(--accent-1); }
-.moon { color: var(--accent-1); }
-
-/* Icon visibility via CSS */
+/* Sun/Moon icon swap */
 .iconLight { display: inline; }
-.iconDark { display: none; }
+.iconDark  { display: none; }
 html[data-theme="dark"] .iconLight { display: none; }
 html[data-theme="dark"] .iconDark  { display: inline; }

@@ -2,9 +2,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import useTheme from '../../hooks/useTheme';
 import styles from './Navbar.module.css';
-import lightLogo from '../../assets/brand-light.svg?url';
+import lightLogo        from '../../assets/brand-light.svg?url';
 import lightLogoStacked from '../../assets/brand-light-stacked.svg?url';
-import { Sun, Moon } from 'phosphor-react';
+import { Sun, Moon }    from 'phosphor-react';
 
 export default function Navbar({ pages }) {
   const [open, setOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function Navbar({ pages }) {
         {/* Brand/logo */}
         <a href="/" className={styles.brand}>
           <picture>
-            {/* stacked logo on mobile */}
+            {/* stacked logo on small screens */}
             <source srcSet={lightLogoStacked} media="(max-width: 768px)" />
             <img
               src={lightLogo}
@@ -58,14 +58,16 @@ export default function Navbar({ pages }) {
           <Sun  size={24} weight="bold" className={styles.iconDark}  />
         </button>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile menu toggle (burger → X) */}
         <button
           ref={toggleRef}
-          className={styles.toggle}
+          className={`${styles.toggle} ${open ? styles.open : ''}`}
           onClick={() => setOpen(o => !o)}
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
-          {open ? '✕' : '☰'}
+          <span />
+          <span />
+          <span />
         </button>
 
         {/* Navigation links */}
@@ -77,9 +79,7 @@ export default function Navbar({ pages }) {
             <li key={page.slug} className={styles.navItemWrapper}>
               <a
                 href={`/${page.slug}`}
-                className={`${styles.navItem} ${
-                  page.children?.length ? styles.hasChildren : ''
-                }`}
+                className={`${styles.navItem} ${page.children?.length ? styles.hasChildren : ''}`}
               >
                 {page.title}
               </a>
