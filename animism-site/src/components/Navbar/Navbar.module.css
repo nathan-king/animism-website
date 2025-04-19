@@ -27,7 +27,7 @@
 /* Logo image */
 .brandImage {
   display: block;
-  height: 1.5rem;
+  height: 1.2rem;
   transition: filter var(--transition-duration) var(--transition-ease);
 }
 
