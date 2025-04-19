@@ -1,3 +1,5 @@
+/* src/layouts/WikiLayout.module.css */
+
 /* Desktop: two‑column flex */
 .wikiLayout {
   display: flex;
@@ -7,8 +9,10 @@
   padding: 3rem 2rem;
 }
 
-/* Sidebar container remains always visible */
+/* Sidebar container sticks while scrolling */
 .wikiSidebarContainer {
+  position: sticky;
+  top: 3rem;
   width: 260px;
   flex-shrink: 0;
   padding-left: 1rem;
@@ -34,7 +38,7 @@
     gap: 1rem;
   }
 
-  /* Sidebar becomes fixed but always visible */
+  /* Sidebar becomes full‑width, flows with content on mobile */
   .wikiSidebarContainer {
     position: relative;
     top: auto;
@@ -49,7 +53,7 @@
 
   /* Center article with minimal padding */
   .wikiArticle {
-    width: 100%;
+    width: auto;
     max-width: none;
     margin: 0 auto;
     padding: 0 1rem;

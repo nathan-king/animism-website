@@ -31,7 +31,7 @@
   .sidebarToggle {
     display: block;
     position: fixed;
-    top: 1.75rem;
+    top: 1.5rem;
     left: 1rem;
     background: none;
     border: none;
@@ -152,5 +152,11 @@
   
   .toggleIcon {
     color: var(--foreground);
+    background: color-mix(in srgb, var(--background) 80%, transparent 20%);
+    padding: .5rem;
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    
   }
   
