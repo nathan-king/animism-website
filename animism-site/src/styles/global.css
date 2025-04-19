@@ -178,6 +178,19 @@ a:hover {
   color: var(--link-hover);
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus,
+a:focus,
+.toggle:focus,
+.toggleButton:focus {
+  outline: none;
+}
+
+
+
 
 /* ──────────────────────────────────────────
         ✍️ Headings
