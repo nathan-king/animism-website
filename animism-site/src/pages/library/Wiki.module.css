@@ -3,9 +3,24 @@
 /* Container for category cards: responsive grid */
 .categoryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /* auto-fit cards with a comfortable minimum width */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+}
+
+/* Tablet: force two cards per row if possible */
+@media (max-width: 768px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 480px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .categoryCard {
@@ -14,6 +29,8 @@
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 1px 3px var(--nav-shadow-color);
+  width: 100%;
+  /* fill the grid cell */
 }
 
 .categoryCard h2 {
@@ -43,7 +60,7 @@
   line-height: 1.75;
 }
 
-/* Optional narrower card titles on small screens */
+/* Optional narrower card titles on very small screens */
 @media (max-width: 480px) {
   .categoryCard h2 {
     font-size: 1.25rem;
